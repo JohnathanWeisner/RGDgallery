@@ -2,8 +2,8 @@ require 'nokogiri'
 require 'open-uri'
 require 'httparty'
 
-home = "http://www.reddit.com"
-htmlend = "/r/redditgetsdrawn"
+HOME = "http://www.reddit.com"
+HTMLEND = "/r/redditgetsdrawn"
 
 # A typical post will look like this unformatted:
 # 	<div class="entry unvoted">
@@ -29,23 +29,23 @@ htmlend = "/r/redditgetsdrawn"
 #
 #
 # Use this example as a guide for what CSSquery you'll need to get at the information you're looking for.
-
 class Post
+  attr_reader :post
 	attr_accessor :submitter,:ref_link,:comments_link,:title,:timestamp,:artworks
 	def initialize(post)
-		@post = post
-		@ref_link = self.get_ref_link
-		@title = self.get_title
-		@submitter = self.get_submitter
-		@timestamp = self.get_timestamp
+		@post          = post
+		@ref_link      = self.get_ref_link
+		@title         = self.get_title
+		@submitter     = self.get_submitter
+		@timestamp     = self.get_timestamp
 		@comments_link = self.get_comments_link
-		@artworks = self.get_artworks
+		@artworks      = self.get_artworks
 	end
 
 	# This method already works. It grabs the href of the reference image and formats it properly
 	# so the image link is usable.
 	def get_ref_link
-		ref_links = @post.css('.title a').map { |link| link["href"]}
+		ref_links = post.css('.title a').map { |link| link["href"]}
 		ref_links.select do |link|
 			unless link.include?("/domain/") || link.include?("/r/redditgetsdrawn/")
 				if link.include?("i.imgur")
@@ -126,8 +126,8 @@ class Artwork
 end
 
 
-@doc = Nokogiri::HTML(open(home + htmlend))
-posts = @doc.css('.entry')
+doc = Nokogiri::HTML(open(HOME + HTMLEND))
+posts = doc.css('.entry')
 posts_formatted = []
 
 # Adds the Post object to the posts_formatted array
