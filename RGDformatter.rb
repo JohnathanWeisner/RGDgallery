@@ -83,9 +83,9 @@ class Post
     #           <time title="Sun Mar 9 14:18:03 2014 UTC" datetime="2014-03-09T14:18:03+00:00">16 hours</time>&#32;ago&#32;by&#32;<a href="http://www.reddit.com/user/jgordon02" class="author id-t2_4ja0p">jgordon02</a>
     #           <span class="userattrs"></span>
     #         </p>
-    # get_date_posted => "2014-03-09T14:18:03+00:00"
+    # get_timestamp => "2014-03-09T14:18:03+00:00"
     #
-	def get_date_posted 
+	def get_timestamp
 	end
 
 	# Phase 1 Method
