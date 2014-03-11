@@ -31,7 +31,7 @@ HTMLEND = "/r/redditgetsdrawn"
 # Use this example as a guide for what CSSquery you'll need to get at the information you're looking for.
 class Post
   attr_reader :post
-	attr_accessor :submitter,:ref_link,:comments_link,:title,:timestamp,:artworks
+	attr_accessor :submitter,:ref_link,:comments_link,:title,:timestamp,:artworks,:first_level_comments
 	def initialize(post)
 		@post          = post
 		@ref_link      = self.get_ref_link
@@ -40,6 +40,7 @@ class Post
 		@timestamp     = self.get_timestamp
 		@comments_link = self.get_comments_link
 		@artworks      = self.get_artworks
+		@first_level_comments = self.get_first_level_comments
 	end
 
 	# This method already works. It grabs the href of the reference image and formats it properly
@@ -87,12 +88,13 @@ class Post
 	#
 	# return the timestamp of when the reference was originially submitted
 	# Example <p class="tagline">submitted&#32;
-  #           <time title="Sun Mar 9 14:18:03 2014 UTC" datetime="2014-03-09T14:18:03+00:00">16 hours</time>&#32;ago&#32;by&#32;<a href="http://www.reddit.com/user/jgordon02" class="author id-t2_4ja0p">jgordon02</a>
-  #           <span class="userattrs"></span>
-  #         </p>
-  # get_timestamp => "2014-03-09T14:18:03+00:00"
-  #
+ 	#           <time title="Sun Mar 9 14:18:03 2014 UTC" datetime="2014-03-09T14:18:03+00:00">16 hours</time>&#32;ago&#32;by&#32;<a href="http://www.reddit.com/user/jgordon02" class="author id-t2_4ja0p">jgordon02</a>
+  	#           <span class="userattrs"></span>
+  	#         </p>
+  	# get_timestamp => "2014-03-09T14:18:03+00:00"
+  	#
 	def get_timestamp
+		time = post.at_css('time')["datetime"]
 	end
 
 	# Phase 1 Method
@@ -101,13 +103,17 @@ class Post
 	# Example <li class="first"><a class="comments" href="http://www.reddit.com/r/redditgetsdrawn/comments/1zysx2/please_draw_my_grandparents_it_was_just_their/" target="_parent">143 comments</a>
 	# get_comments_link => "http://www.reddit.com/r/redditgetsdrawn/comments/1zysx2/please_draw_my_grandparents_it_was_just_their/"
 	def get_comments_link
+		comments_link = post.at_css('.comments')["href"]
 	end
 
 	# Phase 1.5 Method (Complete all Phase 1 methods before working on this)
 	#
 	# This method will be for phase 1.5 where we need to return all of the first level comments after going to @comments_link
 	# The comments will be stored in an array.
-	def get_first_level_comments 
+	def get_first_level_comments
+		comments_page = Nokogiri::HTML(open(comments_link))
+		comments = comments_page.css('.entry')
+		comments.map{}
 	end
 
 	# Phase 1.5 Method (Complete all Phase 1 methods before working on this)
@@ -138,10 +144,20 @@ doc = Nokogiri::HTML(open(HOME + HTMLEND))
 posts = doc.css('.entry')
 posts_formatted = []
 
+
+# the below comments are for tests
+#puts posts[0]
 # Adds the Post object to the posts_formatted array
-posts.each_with_index{|post,index|
-	posts_formatted << Post.new(post)
-}
+#posts.each_with_index{|post,index|
+#	posts_formatted << Post.new(post)
+#	p posts_formatted[index].timestamp
+#	p posts_formatted[index].comments_link
+#}
+#puts posts_formatted[0].first_level_comments[1]
+#puts "********************************************************************"
+#puts "********************************************************************"
+#puts "********************************************************************"
+#puts posts_formatted[0].first_level_comments[2]
 
 #this is just a test call to make sure we have all of the reference picture links formatted correctly
 posts_formatted.each{|post|  
