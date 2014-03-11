@@ -129,6 +129,8 @@ class Post
 
 end
 
+
+
 # Represents the Submitter of the post
 class Submitter
 	attr_accessor :username, :user_link
@@ -148,6 +150,10 @@ class Submitter
 	end
 
 end
+
+
+
+
 
 #
 # An Example Artwork comment
@@ -209,6 +215,8 @@ class Artwork
 	end
 
 	# Returns the number of upvotes as an int
+	# Example <span class="score likes">30 points</span> 
+	# get_upvotes => 30
 	def get_upvotes
 	end
 end
