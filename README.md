@@ -16,8 +16,8 @@ www.reddit.com/r/redditgetsdrawn reformatted as a picture gallery for easy viewi
 
 ######$git add RGDformatter.rb
 ######$git commit -m "Johnathan will be working on -This- method."
-######$git pull master origin
-######$git push master origin
+######$git pull origin master
+######$git push origin master
 
 #####It's all great practice.
 #####But check this link out to practice Nokogiri mmkay
