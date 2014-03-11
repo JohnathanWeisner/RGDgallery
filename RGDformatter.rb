@@ -65,7 +65,7 @@ class Post
 	#
 	def get_title
 		titles = post.css('p.title').map {|title| title.text.strip}.each do |title|
-			title
+			return title.gsub(/\Wi.imgur.com\W|\Wimgur.com\W/, "").chop
 		end
 	end
 
@@ -140,7 +140,7 @@ posts.each_with_index{|post,index|
 
 #this is just a test call to make sure we have all of the reference picture links formatted correctly
 posts_formatted.each{|post|  
-	puts "Title: #{post.get_title.join} - RefLink: #{post.ref_link.join}"
+	puts "Title: #{post.get_title} - RefLink: #{post.ref_link.join}"
 }
 =begin
 files = @doc.css('.title a').map { |link| link["href"]}
