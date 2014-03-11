@@ -63,7 +63,10 @@ class Post
 	# Example "<a class="title " href="http://imgur.com/LVJy5YG" tabindex="1">Please draw my grandparents! It was just their 50th anniversary!</a>&#32;"
 	# get_title will only return "Please draw my grandparents! It was just their 50th anniversary!"
 	#
-	def get_title  
+	def get_title
+		titles = post.css('p.title').map { |title| title.text.strip }.each do |title|
+			return title.gsub(/\Wi.imgur.com\W|\Wimgur.com\W/, "").chop
+		end
 	end
 
 	# Phase 1 Method
@@ -73,7 +76,11 @@ class Post
 	# submitter.username => jgordon02
 	# submitter.user_link => http://www.reddit.com/user/jgordon02
 	#
-	def get_submitter 
+	def get_submitter
+		authors = post.css('.author')
+		username = authors.map {|author| author.text.strip}
+		user_link = "http://www.reddit.com/user/#{username.join}"
+		Submitter.new(username,user_link) # Be weary of creating dependencies like these which don't promote easy future changes. Suggest reading of Chapter 3 Practical OO Design in Ruby 
 	end
 
 	# Phase 1 Method
@@ -114,7 +121,9 @@ end
 # This class may need to be fleshed out more
 class Submitter
 	attr_accessor :username, :user_link
-	def initialize()
+	def initialize(username, user_link)
+		@username  = username
+		@user_link = user_link
 	end
 end
 
@@ -124,7 +133,6 @@ class Artwork
 	def initialize()
 	end
 end
-
 
 doc = Nokogiri::HTML(open(HOME + HTMLEND))
 posts = doc.css('.entry')
@@ -137,7 +145,7 @@ posts.each_with_index{|post,index|
 
 #this is just a test call to make sure we have all of the reference picture links formatted correctly
 posts_formatted.each{|post|  
-	puts post.ref_link
+	puts "Title: #{post.get_title} - RefLink: #{post.ref_link.join} by #{post.get_submitter.username.join} at (#{post.get_submitter.user_link})"
 }
 =begin
 files = @doc.css('.title a').map { |link| link["href"]}
