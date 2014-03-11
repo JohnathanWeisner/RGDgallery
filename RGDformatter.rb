@@ -211,19 +211,26 @@ class Artwork
 
 	# Returns the timestamp for the when the art was submitted
 	def get_timestamp
-		time = post.at_css('time')["datetime"]
+		time = comment.at_css('time')["datetime"]
 	end
 
 	# Returns the number of upvotes as an int
 	# Example <span class="score likes">30 points</span> 
 	# get_upvotes => 30
 	def get_upvotes
+	    upvotes = comment.at_css('.likes')
+	    if upvotes.to_s.empty?
+	    	nil
+	    else
+	    	upvotes.children.text.to_s.split(" ")[0]
+	    end
 	end
 end
 
 doc = Nokogiri::HTML(open(HOME + HTMLEND))
 posts = doc.css('.entry')
 posts_formatted = []
+
 
 # Adds the Post object to the posts_formatted array
 posts.each_with_index{|post,index|
@@ -233,7 +240,7 @@ posts.each_with_index{|post,index|
 #	puts "Artwork Submitter Link: #{posts_formatted[index].artworks.at(0).submitter.user_link}"
 #	p posts_formatted[index].comments_link
 }
-
+p posts_formatted[1].artworks.at(0).upvotes
 #puts posts_formatted[1].get_first_level_comments[0]
 #this is just a test call to make sure we have all of the reference picture links formatted correctly
 #posts_formatted.each{|post|  
