@@ -63,7 +63,10 @@ class Post
 	# Example "<a class="title " href="http://imgur.com/LVJy5YG" tabindex="1">Please draw my grandparents! It was just their 50th anniversary!</a>&#32;"
 	# get_title will only return "Please draw my grandparents! It was just their 50th anniversary!"
 	#
-	def get_title  
+	def get_title
+		titles = post.css('p.title').map {|title| title.text.strip}.each do |title|
+			title
+		end
 	end
 
 	# Phase 1 Method
@@ -137,7 +140,7 @@ posts.each_with_index{|post,index|
 
 #this is just a test call to make sure we have all of the reference picture links formatted correctly
 posts_formatted.each{|post|  
-	puts post.ref_link
+	puts "Title: #{post.get_title.join} - RefLink: #{post.ref_link.join}"
 }
 =begin
 files = @doc.css('.title a').map { |link| link["href"]}
