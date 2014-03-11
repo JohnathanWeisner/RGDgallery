@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-require 'httparty'
+
 
 HOME = "http://www.reddit.com"
 HTMLEND = "/r/redditgetsdrawn"
@@ -80,11 +80,11 @@ class Post
 	#
 	# return the timestamp of when the reference was originially submitted
 	# Example <p class="tagline">submitted&#32;
-    #           <time title="Sun Mar 9 14:18:03 2014 UTC" datetime="2014-03-09T14:18:03+00:00">16 hours</time>&#32;ago&#32;by&#32;<a href="http://www.reddit.com/user/jgordon02" class="author id-t2_4ja0p">jgordon02</a>
-    #           <span class="userattrs"></span>
-    #         </p>
-    # get_timestamp => "2014-03-09T14:18:03+00:00"
-    #
+  #           <time title="Sun Mar 9 14:18:03 2014 UTC" datetime="2014-03-09T14:18:03+00:00">16 hours</time>&#32;ago&#32;by&#32;<a href="http://www.reddit.com/user/jgordon02" class="author id-t2_4ja0p">jgordon02</a>
+  #           <span class="userattrs"></span>
+  #         </p>
+  # get_timestamp => "2014-03-09T14:18:03+00:00"
+  #
 	def get_timestamp
 	end
 
