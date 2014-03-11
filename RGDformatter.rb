@@ -80,7 +80,7 @@ class Post
 		authors = post.css('.author')
 		username = authors.map {|author| author.text.strip}
 		user_link = "http://www.reddit.com/user/#{username.join}"
-		Submitter.new(username,user_link)
+		Submitter.new(username,user_link) # Be weary of creating dependencies like these which don't promote easy future changes. Suggest reading of Chapter 3 Practical OO Design in Ruby 
 	end
 
 	# Phase 1 Method
@@ -122,7 +122,7 @@ end
 class Submitter
 	attr_accessor :username, :user_link
 	def initialize(username, user_link)
-		@username = username
+		@username  = username
 		@user_link = user_link
 	end
 end
