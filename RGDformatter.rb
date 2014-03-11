@@ -150,6 +150,7 @@ posts.each_with_index{|post,index|
 #	p posts_formatted[index].timestamp
 #	p posts_formatted[index].comments_link
 }
+
 #puts posts_formatted[0].first_level_comments[1]
 #puts "********************************************************************"
 #puts "********************************************************************"
