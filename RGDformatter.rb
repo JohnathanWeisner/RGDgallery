@@ -31,7 +31,7 @@ HTMLEND = "/r/redditgetsdrawn"
 # Use this example as a guide for what CSSquery you'll need to get at the information you're looking for.
 class Post
   attr_reader :post
-	attr_accessor :submitter,:ref_link,:comments_link,:title,:timestamp,:artworks,:first_level_comments
+	attr_accessor :submitter,:ref_link,:comments_link,:title,:timestamp,:artworks
 	def initialize(post)
 		@post          = post
 		@ref_link      = self.get_ref_link
@@ -39,8 +39,7 @@ class Post
 		@submitter     = self.get_submitter
 		@timestamp     = self.get_timestamp
 		@comments_link = self.get_comments_link
-		@artworks      = self.get_artworks
-		@first_level_comments = self.get_first_level_comments
+		@artworks      = self.get_artworks(get_first_level_comments)
 	end
 
 	# This method already works. It grabs the href of the reference image and formats it properly
@@ -121,12 +120,14 @@ class Post
 			}
 			check
 		}
+		comments[1..-1] # index 0 would be the initial post so we return all but the index 0
 	end
 
 	# Phase 1.5 Method (Complete all Phase 1 methods before working on this)
 	#
 	# Within this method we will call get_first_level_comments and then format the information into Artwork objects
-	def get_artworks
+	def get_artworks(comments) # given an array all of the first_level_comments
+		art = comments.map{|comment| Artwork.new(comment)}
 	end
 
 end
@@ -142,8 +143,25 @@ end
 
 # This class may need to be fleshed out more
 class Artwork
-	attr_accessor :link, :submitter, :timestamp, :upvotes
-	def initialize()
+	attr_accessor :comment, :art_link, :submitter, :timestamp, :upvotes
+	def initialize(comment)
+		@comment = comment
+		@link = self.get_art_link
+		@submitter = self.get_submitter
+		@timestamp = self.get_timestamp
+		@upvotes = self.get_upvotes
+	end
+
+	def get_art_link
+	end
+
+	def get_submitter
+	end
+
+	def get_timestamp
+	end
+
+	def get_upvotes
 	end
 end
 
@@ -151,7 +169,6 @@ doc = Nokogiri::HTML(open(HOME + HTMLEND))
 posts = doc.css('.entry')
 posts_formatted = []
 
-#puts posts[0]
 # Adds the Post object to the posts_formatted array
 posts.each_with_index{|post,index|
 	posts_formatted << Post.new(post)
@@ -159,11 +176,6 @@ posts.each_with_index{|post,index|
 #	p posts_formatted[index].comments_link
 }
 
-#puts posts_formatted[0].first_level_comments[1]
-#puts "********************************************************************"
-#puts "********************************************************************"
-#puts "********************************************************************"
-#puts posts_formatted[0].first_level_comments[2]
 
 #this is just a test call to make sure we have all of the reference picture links formatted correctly
 #posts_formatted.each{|post|  
