@@ -132,7 +132,7 @@ class Post
 
 end
 
-# This class may need to be fleshed out more
+# Represents the Submitter of the post
 class Submitter
 	attr_accessor :username, :user_link
 	def initialize(username, user_link)
@@ -141,7 +141,41 @@ class Submitter
 	end
 end
 
-# This class may need to be fleshed out more
+#
+# An Example Artwork comment
+#
+#
+#  <div class="entry unvoted">
+#  	<div class="collapsed" style="display:none">
+#  		<a href="#" class="expand" onclick="return showcomment(this)">[+]</a>
+#  		<a href="http://www.reddit.com/user/StorytimeWithDudly" class="author gray id-t2_bie55">StorytimeWithDudly</a>
+#  		<span class="userattrs"></span> <span class="score dislikes">28 points</span><span class="score unvoted">29 points</span>
+#  		<span class="score likes">30 points</span> 
+#  		<time title="Tue Mar 11 16:55:29 2014 UTC" datetime="2014-03-11T16:55:29+00:00">1 hour</time> ago  <a href="#" class="expand" onclick="return showcomment(this)">(1 child)</a>
+#  	</div>
+#  	<div class="noncollapsed">
+#  		<p class="tagline">
+#  			<a href="#" class="expand" onclick="return hidecomment(this)">[–]</a>
+#  			<a href="http://www.reddit.com/user/StorytimeWithDudly" class="author id-t2_bie55">StorytimeWithDudly</a>
+#  			<span class="userattrs"></span> <span class="score dislikes">28 points</span><span class="score unvoted">29 points</span>
+#  			<span class="score likes">30 points</span> <time title="Tue Mar 11 16:55:29 2014 UTC" datetime="2014-03-11T16:55:29+00:00">1 hour</time> ago
+#  		</p>
+#  		<form action="#" class="usertext" onsubmit="return post_form(this, 'editusertext')" id="form-t1_cfzxh8dzu4">
+#  			<input type="hidden" name="thing_id" value="t1_cfzxh8d">
+#  			<div class="usertext-body">
+#  				<div class="md">
+#  					<p>Second submission to this sub! I really need skin tones...<br><a href="http://imgur.com/lzByaHa">http://imgur.com/lzByaHa</a>      </p>
+#  				</div>
+#  			</div>
+#  		</form>
+#  		<ul class="flat-list buttons">
+#  			<li class="first">
+#  				<a href="http://www.reddit.com/r/redditgetsdrawn/comments/2052uh/my_boyfriend_during_his_african_childhood/cfzxh8d" class="bylink" rel="nofollow">permalink</a>
+#  			</li>
+#  		</ul>
+#  	</div>
+#  </div>
+
 class Artwork
 	attr_accessor :comment, :art_link, :submitter, :timestamp, :upvotes
 	def initialize(comment)
@@ -152,15 +186,19 @@ class Artwork
 		@upvotes = self.get_upvotes
 	end
 
+	# Returns the href for the artwork: if the link is a gallery then the method must open that gallery and grab the first picture in said gallery
 	def get_art_link
 	end
 
+	# Returns a Submitter object which includes username and user_link
 	def get_submitter
 	end
 
+	# Returns the timestamp for the when the art was submitted
 	def get_timestamp
 	end
 
+	# Returns the number of upvotes as an int
 	def get_upvotes
 	end
 end
@@ -176,7 +214,7 @@ posts.each_with_index{|post,index|
 #	p posts_formatted[index].comments_link
 }
 
-
+puts posts_formatted[1].get_first_level_comments[0]
 #this is just a test call to make sure we have all of the reference picture links formatted correctly
 #posts_formatted.each{|post|  
 #	puts "Title: #{post.get_title} - RefLink: #{post.ref_link.join} by #{post.get_submitter.username.join} at (#{post.get_submitter.user_link})"
