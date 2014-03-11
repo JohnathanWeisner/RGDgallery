@@ -77,10 +77,7 @@ class Post
 	# submitter.user_link => http://www.reddit.com/user/jgordon02
 	#
 	def get_submitter
-		authors = post.css('.author')
-		username = authors.map {|author| author.text.strip}
-		user_link = "http://www.reddit.com/user/#{username.join}"
-		Submitter.new(username,user_link) # Be weary of creating dependencies like these which don't promote easy future changes. Suggest reading of Chapter 3 Practical OO Design in Ruby 
+		Submitter.new(post) # Be weary of creating dependencies like these which don't promote easy future changes. Suggest reading of Chapter 3 Practical OO Design in Ruby 
 	end
 
 	# Phase 1 Method
@@ -135,10 +132,21 @@ end
 # Represents the Submitter of the post
 class Submitter
 	attr_accessor :username, :user_link
-	def initialize(username, user_link)
-		@username  = username
-		@user_link = user_link
+	def initialize(post)
+		@post = post
+		@username  = get_username
+		@user_link = get_user_link
 	end
+
+	def get_username
+		authors = @post.css('.author')
+		username = authors.map {|author| author.text.strip}[0]
+	end
+
+	def get_user_link
+		user_link = "http://www.reddit.com/user/#{username}"
+	end
+
 end
 
 #
@@ -192,6 +200,7 @@ class Artwork
 
 	# Returns a Submitter object which includes username and user_link
 	def get_submitter
+		Submitter.new(@comment)
 	end
 
 	# Returns the timestamp for the when the art was submitted
@@ -210,11 +219,13 @@ posts_formatted = []
 # Adds the Post object to the posts_formatted array
 posts.each_with_index{|post,index|
 	posts_formatted << Post.new(post)
-#	p posts_formatted[index].timestamp
+#	puts posts_formatted[index]
+#	puts "Artwork Submitter Username: #{posts_formatted[index].artworks.at(0).submitter.username}"
+#	puts "Artwork Submitter Link: #{posts_formatted[index].artworks.at(0).submitter.user_link}"
 #	p posts_formatted[index].comments_link
 }
 
-puts posts_formatted[1].get_first_level_comments[0]
+#puts posts_formatted[1].get_first_level_comments[0]
 #this is just a test call to make sure we have all of the reference picture links formatted correctly
 #posts_formatted.each{|post|  
 #	puts "Title: #{post.get_title} - RefLink: #{post.ref_link.join} by #{post.get_submitter.username.join} at (#{post.get_submitter.user_link})"
