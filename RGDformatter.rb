@@ -205,6 +205,7 @@ class Artwork
 
 	# Returns the timestamp for the when the art was submitted
 	def get_timestamp
+		time = post.at_css('time')["datetime"]
 	end
 
 	# Returns the number of upvotes as an int
