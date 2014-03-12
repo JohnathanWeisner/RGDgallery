@@ -54,7 +54,7 @@ class Post
 					link_gallery = Nokogiri::HTML(open(link))
 					img_link = link_gallery.css('link').select{|this_link| this_link["rel"]=="image_src" }[0]["href"]
 				else
-					links
+					link
 				end
 			end
 		}[0]
