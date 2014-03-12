@@ -46,7 +46,7 @@ class Post
 	# so the image link is usable.
 	def get_ref_link
 		ref_links = post.css('.title a').map { |link| link["href"]}
-		ref_links.select do |link|
+		ref_links.select { |link|
 			unless link.include?("/domain/") || link.include?("/r/redditgetsdrawn/")
 				if link.include?("i.imgur")
 					link
@@ -54,7 +54,7 @@ class Post
 					link.gsub!(/imgur/,"i.imgur").insert(-1, ".jpg")
 				end
 			end
-		end
+		}[0]
 	end
 
 	# Phase 1 Method
@@ -221,6 +221,47 @@ class Artwork
 	end
 end
 
+def test_output(posts_formatted)
+	posts_formatted.each_with_index { |post, index|
+		unless post.ref_link == nil || post.artworks.empty?
+			puts "**************************************************************"
+			puts "*****************ORIGINAL REFERENCE POST *********************"
+			puts "**************************************************************"
+			puts "\n\n\nThe post in posts_formatted array at index ##{index}:\n"
+			puts "Title"
+			puts "post.title : #{post.title}"
+			puts "\nReference picture"
+			puts "post.ref_link : #{post.ref_link}"
+			puts "\nSubmitter"
+			puts "post.submitter.username : #{post.submitter.username}"
+			puts "post.submitter.user_link : #{post.submitter.user_link}"
+			puts "\nTime Submitted"
+			puts "post.timestamp : #{post.timestamp}"
+			puts "\nLink to the comments section of the post"
+			puts "post.comments_link : #{post.comments_link}"
+			puts "**************************************************************"
+			puts "**************************************************************"
+			puts "\n\nIterating through the artworks array of this post we get"
+			post.artworks.each_with_index{|artwork, index|
+				unless artwork.link == nil
+					puts "--------------------------------------------------------------"
+					puts "\nArtwork at index ##{index}"
+					puts "Artwork Link"
+					puts "posts.artworks[#{index}].link : #{artwork.link}"
+					puts "\nArtwork Submitter"
+					puts "posts.artworks[#{index}].submitter.username : #{artwork.submitter.username}"
+					puts "posts.artworks[#{index}].submitter.user_link : #{artwork.submitter.user_link}"
+					puts "\nArtwork Originially Posted"
+					puts "posts.artworks[#{index}].timestamp : #{artwork.timestamp}"
+					puts "\nArtwork Upvotes Count"
+					puts "posts.artworks[#{index}].upvotes : #{artwork.upvotes}"
+					puts "--------------------------------------------------------------"
+				end
+			}
+		end
+	}
+end
+
 doc = Nokogiri::HTML(open(HOME + HTMLEND))
 posts = doc.css('.entry')
 posts_formatted = []
@@ -229,61 +270,6 @@ posts_formatted = []
 # Adds the Post object to the posts_formatted array
 posts.each_with_index{|post,index|
 	posts_formatted << Post.new(post)
-#	puts posts_formatted[index]
-#	puts "Artwork Submitter Username: #{posts_formatted[index].artworks.at(0).submitter.username}"
-#	puts "Artwork Submitter Link: #{posts_formatted[index].artworks.at(0).submitter.user_link}"
-#	p posts_formatted[index].comments_link
 }
 
-posts_formatted.each_with_index { |post, index|
-	puts "\n\n\nThe post in posts_formatted array at index ##{index}:\n"
-	puts "Title"
-	puts "post.title : #{post.title}"
-	puts "\nReference picture"
-	puts "post.ref_link : #{post.ref_link}"
-	puts "\nSubmitter"
-	puts "post.submitter.username : #{post.submitter.username}"
-	puts "post.submitter.user_link : #{post.submitter.user_link}"
-	puts "\nTime Submitted"
-	puts "post.timestamp : #{post.timestamp}"
-	puts "\nLink to the comments section of the post"
-	puts "post.comments_link : #{post.comments_link}"
-	puts "\n\nIterating through the artworks array of this post we get"
-	post.artworks.each_with_index{|artwork, index|
-		puts "\nArtwork at index ##{index}"
-		puts "Artwork Link"
-		puts "\nposts.artworks[#{index}].link : #{artwork.link}"
-		puts "\nArtwork Submitter"
-		puts "posts.artworks[#{index}].submitter.username : #{artwork.submitter.username}"
-		puts "posts.artworks[#{index}].submitter.user_link : #{artwork.submitter.user_link}"
-		puts "\nArtwork Originially Posted"
-		puts "posts.artworks[#{index}].timestamp : #{artwork.timestamp}"
-		puts "\nArtwork Upvotes Count"
-		puts "posts.artworks[#{index}].upvotes : #{artwork.upvotes}"
-	}
-}
-
-
-# posts_formatted[4].artworks.each {|artwork| p artwork.get_art_link}
-#puts posts_formatted[1].get_first_level_comments[0]
-#this is just a test call to make sure we have all of the reference picture links formatted correctly
-#posts_formatted.each{|post|  
-#	puts "Title: #{post.get_title} - RefLink: #{post.ref_link.join} by #{post.get_submitter.username.join} at (#{post.get_submitter.user_link})"
-#}
-=begin
-files = @doc.css('.title a').map { |link| link["href"]}
-
-files.select! do |file|
-	unless file.include?("/domain/") || file.include?("/r/redditgetsdrawn/")
-		if file.include?("i.imgur")
-			file
-		else 
-			file.gsub!(/imgur/,"i.imgur").insert(-1, ".jpg")
-		end
-	end
-end
-
-files.each_with_index do |file,index|
-	puts URI.encode(file) + " #{index}"
-end
-=end
+test_output(posts_formatted)
