@@ -235,32 +235,33 @@ posts.each_with_index{|post,index|
 #	p posts_formatted[index].comments_link
 }
 
+# Driver Code
 posts_formatted.each_with_index { |post, index|
 	puts "\n\n\nThe post in posts_formatted array at index ##{index}:\n"
 	puts "Title"
 	puts "post.title : #{post.title}"
 	puts "\nReference picture"
 	puts "post.ref_link : #{post.ref_link}"
-	# puts "\nSubmitter"
-	# puts "post.submitter.username : #{post.submitter.username}"
-	# puts "post.submitter.user_link : #{post.submitter.user_link}"
-	# puts "\nTime Submitted"
-	# puts "post.timestamp : #{post.timestamp}"
-	# puts "\nLink to the comments section of the post"
-	# puts "post.comments_link : #{post.comments_link}"
-	# puts "\n\nIterating through the artworks array of this post we get"
-	# post.artworks.each_with_index{|artwork, index|
-	# 	puts "\nArtwork at index ##{index}"
-	# 	puts "Artwork Link"
-	# 	puts "\nposts.artworks[#{index}].link : #{artwork.link}"
-	# 	puts "\nArtwork Submitter"
-	# 	puts "posts.artworks[#{index}].submitter.username : #{artwork.submitter.username}"
-	# 	puts "posts.artworks[#{index}].submitter.user_link : #{artwork.submitter.user_link}"
-	# 	puts "\nArtwork Originially Posted"
-	# 	puts "posts.artworks[#{index}].timestamp : #{artwork.timestamp}"
-	# 	puts "\nArtwork Upvotes Count"
-	# 	puts "posts.artworks[#{index}].upvotes : #{artwork.upvotes}"
-	# }
+	puts "\nSubmitter"
+	puts "post.submitter.username : #{post.submitter.username}"
+	puts "post.submitter.user_link : #{post.submitter.user_link}"
+	puts "\nTime Submitted"
+	puts "post.timestamp : #{post.timestamp}"
+	puts "\nLink to the comments section of the post"
+	puts "post.comments_link : #{post.comments_link}"
+	puts "\n\nIterating through the artworks array of this post we get"
+	post.artworks.each_with_index{|artwork, index|
+		puts "\nArtwork at index ##{index}"
+		puts "Artwork Link"
+		puts "\nposts.artworks[#{index}].link : #{artwork.link}"
+		puts "\nArtwork Submitter"
+		puts "posts.artworks[#{index}].submitter.username : #{artwork.submitter.username}"
+		puts "posts.artworks[#{index}].submitter.user_link : #{artwork.submitter.user_link}"
+		puts "\nArtwork Originially Posted"
+		puts "posts.artworks[#{index}].timestamp : #{artwork.timestamp}"
+		puts "\nArtwork Upvotes Count"
+		puts "posts.artworks[#{index}].upvotes : #{artwork.upvotes}"
+	}
 }
 
 
