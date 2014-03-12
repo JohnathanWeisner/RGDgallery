@@ -108,14 +108,9 @@ class Post
 	# The comments will be stored in an array.
 	def get_first_level_comments
 		comments_page = Nokogiri::HTML(open(comments_link))
+		child = comments_page.css('.child .entry')
 		comments = comments_page.css('.entry').select{|link| 
-			check = true
-			link.css('li a').each{|text|
-				if (text.text == "parent")
-				  check = false
-				end
-			}
-			check
+			!(child.include?(link))
 		}
 		comments[1..-1] # index 0 would be the initial post so we return all but the index 0
 	end
