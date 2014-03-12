@@ -46,12 +46,15 @@ class Post
 	# so the image link is usable.
 	def get_ref_link
 		ref_links = post.css('.title a').map { |link| link["href"]}
-		ref_links.select { |link|
+		ref_links.map { |link|
 			unless link.include?("/domain/") || link.include?("/r/redditgetsdrawn/")
 				if link.include?("i.imgur")
-					link =~ /.jpg/ ? link : link.insert(-1, ".jpg")
-				else 
-					link.gsub!(/imgur/,"i.imgur").insert(-1, ".jpg")
+					link =~ /\.(png|jpg|gif)/ ? link : link.insert(-1, ".jpg")
+				elsif link.include?("imgur")
+					link_gallery = Nokogiri::HTML(open(link))
+					img_link = link_gallery.css('link').select{|this_link| this_link["rel"]=="image_src" }[0]["href"]
+				else
+					links
 				end
 			end
 		}[0]
@@ -196,6 +199,16 @@ class Artwork
 	# Returns the href for the artwork: if the link is a gallery then the method must open that gallery and grab the first picture in said gallery
 	def get_art_link
 		links = comment.at_css('.md p a') == nil ? nil : links = comment.at_css('.md p a').attributes["href"].value
+		unless links == nil
+			if links.include?("i.imgur")
+				links =~ /\.(png|jpg|gif)/ ? links : links.insert(-1, ".jpg")
+			elsif links.include?("imgur")
+				link_gallery = Nokogiri::HTML(open(links))
+				img_link = link_gallery.css('link').select{|this_link| this_link["rel"]=="image_src" }[0]["href"]
+			else
+				links
+			end
+		end
 	end
 
 	# Returns a Submitter object which includes username and user_link
@@ -222,6 +235,12 @@ class Artwork
 end
 
 def test_output(posts_formatted)
+	posts_formatted = posts_formatted.clone
+	posts_formatted.each{|posts| 
+		posts.artworks.select{|art|
+			!art.link == nil
+		}
+	}
 	posts_formatted.each_with_index { |post, i|
 		unless post.ref_link == nil || post.artworks.empty?
 			puts "**************************************************************"
