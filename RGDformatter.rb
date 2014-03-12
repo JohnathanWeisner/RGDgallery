@@ -64,9 +64,7 @@ class Post
 	# get_title will only return "Please draw my grandparents! It was just their 50th anniversary!"
 	#
 	def get_title
-		titles = post.css('p.title').map { |title| title.text.strip }.each do |title|
-			return title.gsub(/\Wi.imgur.com\W|\Wimgur.com\W/, "").chop
-		end
+		return post.css('p.title a.title').each {|title| puts title.text}	
 	end
 
 	# Phase 1 Method
