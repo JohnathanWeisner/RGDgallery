@@ -202,6 +202,12 @@ class Artwork
 
 	# Returns the href for the artwork: if the link is a gallery then the method must open that gallery and grab the first picture in said gallery
 	def get_art_link
+		links = comment.at_css('.md p a')
+		if links == nil
+			nil
+		else
+			unless links.text.strip.match(/http\S*/).to_s.empty? then links.text.strip.match(/http\S*/).to_s end
+		end
 	end
 
 	# Returns a Submitter object which includes username and user_link
@@ -240,7 +246,8 @@ posts.each_with_index{|post,index|
 #	puts "Artwork Submitter Link: #{posts_formatted[index].artworks.at(0).submitter.user_link}"
 #	p posts_formatted[index].comments_link
 }
-p posts_formatted[1].artworks.at(0).upvotes
+# p posts_formatted[1].artworks.at(0).upvotes
+posts_formatted[4].artworks.each {|artwork| p artwork.get_art_link}
 #puts posts_formatted[1].get_first_level_comments[0]
 #this is just a test call to make sure we have all of the reference picture links formatted correctly
 #posts_formatted.each{|post|  
