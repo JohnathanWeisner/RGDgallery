@@ -191,7 +191,7 @@ end
 #  </div>
 
 class Artwork
-	attr_accessor :comment, :art_link, :submitter, :timestamp, :upvotes
+	attr_accessor :comment, :link, :submitter, :timestamp, :upvotes
 	def initialize(comment)
 		@comment = comment
 		@link = self.get_art_link
@@ -202,6 +202,7 @@ class Artwork
 
 	# Returns the href for the artwork: if the link is a gallery then the method must open that gallery and grab the first picture in said gallery
 	def get_art_link
+		links = comment.at_css('.md p a') == nil ? nil : links = comment.at_css('.md p a').attributes["href"].value
 	end
 
 	# Returns a Submitter object which includes username and user_link
@@ -234,13 +235,19 @@ posts_formatted = []
 
 # Adds the Post object to the posts_formatted array
 posts.each_with_index{|post,index|
-	posts_formatted << Post.new(post)
+	posts_formatted << post
 #	puts posts_formatted[index]
 #	puts "Artwork Submitter Username: #{posts_formatted[index].artworks.at(0).submitter.username}"
 #	puts "Artwork Submitter Link: #{posts_formatted[index].artworks.at(0).submitter.user_link}"
 #	p posts_formatted[index].comments_link
 }
-p posts_formatted[1].artworks.at(0).upvotes
+
+posts_formatted[1..-1].each_with_index do |post, index|
+	p index
+	Post.new(post).artworks.each {|artwork| p artwork.link}
+end
+
+# posts_formatted[4].artworks.each {|artwork| p artwork.get_art_link}
 #puts posts_formatted[1].get_first_level_comments[0]
 #this is just a test call to make sure we have all of the reference picture links formatted correctly
 #posts_formatted.each{|post|  
