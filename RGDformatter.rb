@@ -49,7 +49,7 @@ class Post
 		ref_links.select { |link|
 			unless link.include?("/domain/") || link.include?("/r/redditgetsdrawn/")
 				if link.include?("i.imgur")
-					link
+					link =~ /.jpg/ ? link : link.insert(-1, ".jpg")
 				else 
 					link.gsub!(/imgur/,"i.imgur").insert(-1, ".jpg")
 				end
