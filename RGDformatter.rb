@@ -49,7 +49,7 @@ class Post
 		ref_links.select do |link|
 			unless link.include?("/domain/") || link.include?("/r/redditgetsdrawn/")
 				if link.include?("i.imgur")
-					link
+					link =~ /.jpg/ ? link : link.insert(-1, ".jpg")
 				else 
 					link.gsub!(/imgur/,"i.imgur").insert(-1, ".jpg")
 				end
@@ -241,26 +241,26 @@ posts_formatted.each_with_index { |post, index|
 	puts "post.title : #{post.title}"
 	puts "\nReference picture"
 	puts "post.ref_link : #{post.ref_link}"
-	puts "\nSubmitter"
-	puts "post.submitter.username : #{post.submitter.username}"
-	puts "post.submitter.user_link : #{post.submitter.user_link}"
-	puts "\nTime Submitted"
-	puts "post.timestamp : #{post.timestamp}"
-	puts "\nLink to the comments section of the post"
-	puts "post.comments_link : #{post.comments_link}"
-	puts "\n\nIterating through the artworks array of this post we get"
-	post.artworks.each_with_index{|artwork, index|
-		puts "\nArtwork at index ##{index}"
-		puts "Artwork Link"
-		puts "\nposts.artworks[#{index}].link : #{artwork.link}"
-		puts "\nArtwork Submitter"
-		puts "posts.artworks[#{index}].submitter.username : #{artwork.submitter.username}"
-		puts "posts.artworks[#{index}].submitter.user_link : #{artwork.submitter.user_link}"
-		puts "\nArtwork Originially Posted"
-		puts "posts.artworks[#{index}].timestamp : #{artwork.timestamp}"
-		puts "\nArtwork Upvotes Count"
-		puts "posts.artworks[#{index}].upvotes : #{artwork.upvotes}"
-	}
+	# puts "\nSubmitter"
+	# puts "post.submitter.username : #{post.submitter.username}"
+	# puts "post.submitter.user_link : #{post.submitter.user_link}"
+	# puts "\nTime Submitted"
+	# puts "post.timestamp : #{post.timestamp}"
+	# puts "\nLink to the comments section of the post"
+	# puts "post.comments_link : #{post.comments_link}"
+	# puts "\n\nIterating through the artworks array of this post we get"
+	# post.artworks.each_with_index{|artwork, index|
+	# 	puts "\nArtwork at index ##{index}"
+	# 	puts "Artwork Link"
+	# 	puts "\nposts.artworks[#{index}].link : #{artwork.link}"
+	# 	puts "\nArtwork Submitter"
+	# 	puts "posts.artworks[#{index}].submitter.username : #{artwork.submitter.username}"
+	# 	puts "posts.artworks[#{index}].submitter.user_link : #{artwork.submitter.user_link}"
+	# 	puts "\nArtwork Originially Posted"
+	# 	puts "posts.artworks[#{index}].timestamp : #{artwork.timestamp}"
+	# 	puts "\nArtwork Upvotes Count"
+	# 	puts "posts.artworks[#{index}].upvotes : #{artwork.upvotes}"
+	# }
 }
 
 
