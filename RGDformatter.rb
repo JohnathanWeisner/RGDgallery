@@ -64,7 +64,7 @@ class Post
 	# get_title will only return "Please draw my grandparents! It was just their 50th anniversary!"
 	#
 	def get_title
-		return post.css('p.title a.title').each {|title| puts title.text}	
+		post.css('p.title a.title').map {|title| title.text}[0]
 	end
 
 	# Phase 1 Method
@@ -228,7 +228,7 @@ posts_formatted = []
 
 # Adds the Post object to the posts_formatted array
 posts.each_with_index{|post,index|
-	posts_formatted << post
+	posts_formatted << Post.new(post)
 #	puts posts_formatted[index]
 #	puts "Artwork Submitter Username: #{posts_formatted[index].artworks.at(0).submitter.username}"
 #	puts "Artwork Submitter Link: #{posts_formatted[index].artworks.at(0).submitter.user_link}"
@@ -236,32 +236,31 @@ posts.each_with_index{|post,index|
 }
 
 posts_formatted.each_with_index { |post, index|
-	puts "The post in posts_formatted array at index ##{index}:"
+	puts "\n\n\nThe post in posts_formatted array at index ##{index}:\n"
 	puts "Title"
 	puts "post.title : #{post.title}"
-=begin
-	puts "Reference picture"
+	puts "\nReference picture"
 	puts "post.ref_link : #{post.ref_link}"
-	puts "Submitter"
+	puts "\nSubmitter"
 	puts "post.submitter.username : #{post.submitter.username}"
 	puts "post.submitter.user_link : #{post.submitter.user_link}"
-	puts "Time Submitted"
+	puts "\nTime Submitted"
 	puts "post.timestamp : #{post.timestamp}"
-	puts "Link to the comments section of the post"
+	puts "\nLink to the comments section of the post"
 	puts "post.comments_link : #{post.comments_link}"
-	puts "Iterating through the artworks array of this post we get"
+	puts "\n\nIterating through the artworks array of this post we get"
 	post.artworks.each_with_index{|artwork, index|
-		puts "Artwork at index ##{index}"
+		puts "\nArtwork at index ##{index}"
 		puts "Artwork Link"
-		puts "posts.artworks[#{index}].link : #{artwork.link}"
-		puts "Artwork Submitter"
+		puts "\nposts.artworks[#{index}].link : #{artwork.link}"
+		puts "\nArtwork Submitter"
 		puts "posts.artworks[#{index}].submitter.username : #{artwork.submitter.username}"
 		puts "posts.artworks[#{index}].submitter.user_link : #{artwork.submitter.user_link}"
-		puts "Artwork Originially Posted"
+		puts "\nArtwork Originially Posted"
 		puts "posts.artworks[#{index}].timestamp : #{artwork.timestamp}"
-		puts "Artwork Upvotes Count"
+		puts "\nArtwork Upvotes Count"
 		puts "posts.artworks[#{index}].upvotes : #{artwork.upvotes}"
-=end
+	}
 }
 
 
