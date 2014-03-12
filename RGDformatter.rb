@@ -222,7 +222,7 @@ class Artwork
 	    if upvotes.to_s.empty?
 	    	nil
 	    else
-	    	upvotes.children.text.to_s.split(" ")[0]
+	    	upvotes.children.text.to_s.split(" ")[0].to_i
 	    end
 	end
 end
