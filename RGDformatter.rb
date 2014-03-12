@@ -65,7 +65,7 @@ class Post
 	#
 	def get_title
 		titles = post.css('p.title').map { |title| title.text.strip }.each do |title|
-			return title.gsub(/\Wi.imgur.com\W|\Wimgur.com\W/, "").chop
+			return titles.gsub(/\Wi.imgur.com\W|\Wimgur.com\W/, "").chop
 		end
 	end
 
