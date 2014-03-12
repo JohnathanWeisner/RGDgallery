@@ -222,23 +222,23 @@ class Artwork
 end
 
 def test_output(posts_formatted)
-	posts_formatted.each_with_index { |post, index|
+	posts_formatted.each_with_index { |post, i|
 		unless post.ref_link == nil || post.artworks.empty?
 			puts "**************************************************************"
 			puts "*****************ORIGINAL REFERENCE POST *********************"
 			puts "**************************************************************"
-			puts "\n\n\nThe post in posts_formatted array at index ##{index}:\n"
+			puts "\n\n\nThe post in posts_formatted array at index ##{i}:\n"
 			puts "Title"
-			puts "post.title : #{post.title}"
+			puts "posts_formatted[#{i}].title : #{post.title}"
 			puts "\nReference picture"
-			puts "post.ref_link : #{post.ref_link}"
+			puts "posts_formatted[#{i}].ref_link : #{post.ref_link}"
 			puts "\nSubmitter"
-			puts "post.submitter.username : #{post.submitter.username}"
-			puts "post.submitter.user_link : #{post.submitter.user_link}"
+			puts "posts_formatted[#{i}].submitter.username : #{post.submitter.username}"
+			puts "posts_formatted[#{i}].submitter.user_link : #{post.submitter.user_link}"
 			puts "\nTime Submitted"
-			puts "post.timestamp : #{post.timestamp}"
+			puts "posts_formatted[#{i}].timestamp : #{post.timestamp}"
 			puts "\nLink to the comments section of the post"
-			puts "post.comments_link : #{post.comments_link}"
+			puts "posts_formatted[#{i}].comments_link : #{post.comments_link}"
 			puts "**************************************************************"
 			puts "**************************************************************"
 			puts "\n\nIterating through the artworks array of this post we get"
@@ -247,14 +247,14 @@ def test_output(posts_formatted)
 					puts "--------------------------------------------------------------"
 					puts "\nArtwork at index ##{index}"
 					puts "Artwork Link"
-					puts "posts.artworks[#{index}].link : #{artwork.link}"
+					puts "posts_formatted[#{i}].artworks[#{index}].link : #{artwork.link}"
 					puts "\nArtwork Submitter"
-					puts "posts.artworks[#{index}].submitter.username : #{artwork.submitter.username}"
-					puts "posts.artworks[#{index}].submitter.user_link : #{artwork.submitter.user_link}"
+					puts "posts_formatted[#{i}].artworks[#{index}].submitter.username : #{artwork.submitter.username}"
+					puts "posts_formatted[#{i}].artworks[#{index}].submitter.user_link : #{artwork.submitter.user_link}"
 					puts "\nArtwork Originially Posted"
-					puts "posts.artworks[#{index}].timestamp : #{artwork.timestamp}"
+					puts "posts_formatted[#{i}].artworks[#{index}].timestamp : #{artwork.timestamp}"
 					puts "\nArtwork Upvotes Count"
-					puts "posts.artworks[#{index}].upvotes : #{artwork.upvotes}"
+					puts "posts_formatted[#{i}].artworks[#{index}].upvotes : #{artwork.upvotes}"
 					puts "--------------------------------------------------------------"
 				end
 			}
