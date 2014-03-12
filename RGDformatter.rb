@@ -237,9 +237,32 @@ posts.each_with_index{|post,index|
 #	p posts_formatted[index].comments_link
 }
 
-posts_formatted[1..-1].each_with_index do |post, index|
-	p index
-	Post.new(post).artworks.each {|artwork| p artwork.link}
+posts_formatted.each_with_index do |post, index|
+	puts "The post in posts_formatted array at index ##{index}:"
+	puts "Title"
+	puts "post.title : #{post.title}"
+	puts "Reference picture"
+	puts "post.ref_link : #{post.ref_link}"
+	puts "Submitter"
+	puts "post.submitter.username : #{post.submitter.username}"
+	puts "post.submitter.user_link : #{post.submitter.user_link}"
+	puts "Time Submitted"
+	puts "post.timestamp : #{post.timestamp}"
+	puts "Link to the comments section of the post"
+	puts "post.comments_link : #{post.comments_link}"
+	puts "Iterating through the artworks array of this post we get"
+	post.artworks.each_with_index{|artwork, index|
+		puts "Artwork at index ##{index}"
+		puts "Artwork Link"
+		puts "posts.artworks[#{index}].link : #{artwork.link}"
+		puts "Artwork Submitter"
+		puts "posts.artworks[#{index}].submitter.username : #{artwork.submitter.username}"
+		puts "posts.artworks[#{index}].submitter.user_link : #{artwork.submitter.user_link}"
+		puts "Artwork Originially Posted"
+		puts "posts.artworks[#{index}].timestamp : #{artwork.timestamp}"
+		puts "Artwork Upvotes Count"
+		puts "posts.artworks[#{index}].upvotes : #{artwork.upvotes}"
+	}
 end
 
 # posts_formatted[4].artworks.each {|artwork| p artwork.get_art_link}
