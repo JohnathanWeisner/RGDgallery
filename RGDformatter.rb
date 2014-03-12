@@ -235,7 +235,6 @@ class Artwork
 end
 
 def test_output(posts_formatted)
-	posts_formatted = posts_formatted.clone
 	posts_formatted.each{|posts| 
 		posts.artworks.select{|art|
 			!art.link == nil
@@ -281,6 +280,43 @@ def test_output(posts_formatted)
 	}
 end
 
+def make_HTML_test(posts_formatted)
+	html_file = "<!doctype html>
+				<head>
+					<title>/r/redditgetsdrawn Gallery</title>
+				</head>
+				<body>"
+	posts_formatted.each{|posts| 
+		posts.artworks.select{|art|
+			!art.link == nil
+		}
+	}
+
+	posts_formatted.each_with_index do |post, i|
+		unless post.ref_link == nil || post.artworks.empty?
+			html_file += "<div class=\"post\">"
+			html_file += "<p>#{post.title}</p>"
+			html_file += "<img src=\"#{post.ref_link}\" \/>"
+			post.artworks.each_with_index do |artwork, index|
+				html_file += "<div class=\"artworks\">"
+				unless artwork.link == nil
+					html_file += "<div class=\"art\">"
+					html_file += "<img src=\"#{artwork.link}\"\/>"
+					html_file += "<\/div>"
+				end
+				html_file += "<\/div>"
+			end
+			html_file += "<\/div>"
+		end
+	end
+	html_file += "<\/body>"
+	html_file += "<\/html>"
+	Dir.mkdir("RGD_HTML") unless File::directory?("RGD_HTML")
+	open("RGD_HTML/RGD_Gallery.html", 'wb') do |file|
+		file.write(html_file)
+	end
+end
+
 doc = Nokogiri::HTML(open(HOME + HTMLEND))
 posts = doc.css('.entry')
 posts_formatted = []
@@ -291,4 +327,5 @@ posts.each_with_index{|post,index|
 	posts_formatted << Post.new(post)
 }
 
-test_output(posts_formatted)
+#test_output(posts_formatted)
+make_HTML_test(posts_formatted)
