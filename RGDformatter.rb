@@ -64,9 +64,7 @@ class Post
 	# get_title will only return "Please draw my grandparents! It was just their 50th anniversary!"
 	#
 	def get_title
-		titles = post.css('p.title').map { |title| title.text.strip }.each do |title|
-			return title.gsub(/\Wi.imgur.com\W|\Wimgur.com\W/, "").chop
-		end
+		return post.css('p.title a.title').each {|title| puts title.text}	
 	end
 
 	# Phase 1 Method
@@ -237,10 +235,11 @@ posts.each_with_index{|post,index|
 #	p posts_formatted[index].comments_link
 }
 
-posts_formatted.each_with_index do |post, index|
+posts_formatted.each_with_index { |post, index|
 	puts "The post in posts_formatted array at index ##{index}:"
 	puts "Title"
 	puts "post.title : #{post.title}"
+=begin
 	puts "Reference picture"
 	puts "post.ref_link : #{post.ref_link}"
 	puts "Submitter"
@@ -262,8 +261,9 @@ posts_formatted.each_with_index do |post, index|
 		puts "posts.artworks[#{index}].timestamp : #{artwork.timestamp}"
 		puts "Artwork Upvotes Count"
 		puts "posts.artworks[#{index}].upvotes : #{artwork.upvotes}"
-	}
-end
+=end
+}
+
 
 # posts_formatted[4].artworks.each {|artwork| p artwork.get_art_link}
 #puts posts_formatted[1].get_first_level_comments[0]
