@@ -49,7 +49,7 @@ class Post
 		ref_links.map { |link|
 			unless link.include?("/domain/") || link.include?("/r/redditgetsdrawn/")
 				if link.include?("i.imgur")
-					link =~ /\.(png|jpg|gif)/ ? link : link.insert(-1, ".jpg")
+					link =~ /\.(png|jpg|gif|jpeg)/ ? link : link.insert(-1, ".jpg")
 				elsif link.include?("imgur")
 					link_gallery = Nokogiri::HTML(open(link))
 					img_link = link_gallery.css('link').select{|this_link| this_link["rel"]=="image_src" }[0]["href"]
@@ -108,19 +108,27 @@ class Post
 	# This method will be for phase 1.5 where we need to return all of the first level comments after going to @comments_link
 	# The comments will be stored in an array.
 	def get_first_level_comments
-		comments_page = Nokogiri::HTML(open(comments_link))
-		child = comments_page.css('.child .entry')
-		comments = comments_page.css('.entry').select{|link| 
-			!(child.include?(link))
-		}
-		comments[1..-1] # index 0 would be the initial post so we return all but the index 0
+		begin
+			comments_page = Nokogiri::HTML(open(comments_link))
+			child = comments_page.css('.child .entry')
+			comments = comments_page.css('.entry').select{|link| 
+				!(child.include?(link))
+			}
+			comments[1..-1] # index 0 would be the initial post so we return all but the index 0
+		rescue Exception => e
+			return nil
+		end
 	end
 
 	# Phase 1.5 Method (Complete all Phase 1 methods before working on this)
 	#
 	# Within this method we will call get_first_level_comments and then format the information into Artwork objects
 	def get_artworks(comments) # given an array all of the first_level_comments
-		art = comments.map{|comment| Artwork.new(comment)}
+		unless comments == nil
+			art = comments.map{|comment| Artwork.new(comment)}
+		else
+			return []
+		end
 	end
 
 end
@@ -198,13 +206,17 @@ class Artwork
 
 	# Returns the href for the artwork: if the link is a gallery then the method must open that gallery and grab the first picture in said gallery
 	def get_art_link
-		links = comment.at_css('.md p a') == nil ? nil : links = comment.at_css('.md p a').attributes["href"].value
-		unless links == nil
+		links = comment.at_css('.md p a') == nil ? [] : links = comment.at_css('.md p a').attributes["href"].value
+		unless links == []
 			if links.include?("i.imgur")
-				links =~ /\.(png|jpg|gif)/ ? links : links.insert(-1, ".jpg")
+				links =~ /\.(png|jpg|gif|jpeg)/ ? links : links.insert(-1, ".jpg")
 			elsif links.include?("imgur")
-				link_gallery = Nokogiri::HTML(open(links))
-				img_link = link_gallery.css('link').select{|this_link| this_link["rel"]=="image_src" }[0]["href"]
+				begin
+					link_gallery = Nokogiri::HTML(open(links))
+  					img_link = link_gallery.css('link').select{|this_link| this_link["rel"]=="image_src" }[0]["href"]
+				rescue Exception => e
+				    return links = []
+				end
 			else
 				links
 			end
@@ -235,10 +247,8 @@ class Artwork
 end
 
 def test_output(posts_formatted)
-	posts_formatted.each{|posts| 
-		posts.artworks.select{|art|
-			!art.link == nil
-		}
+	posts_formatted.each_with_index{|posts, index|
+		posts.artworks.select{|art| !art.link == nil} unless posts.artworks == nil
 	}
 	posts_formatted.each_with_index { |post, i|
 		unless post.ref_link == nil || post.artworks.empty?
