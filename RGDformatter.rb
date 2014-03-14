@@ -291,11 +291,19 @@ def test_output(posts_formatted)
 end
 
 def make_HTML_test(posts_formatted)
-	html_file = "<!doctype html>
-				<head>
-					<title>/r/redditgetsdrawn Gallery</title>
-				</head>
-				<body>"
+	html_file = "<!DOCTYPE HTML>
+					<head>
+  						<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>
+						<title>gotdrawn</title>
+						<link rel=\"stylesheet\" href=\"css/normalize.css\" type=\"text/css\" media=\"screen\">
+						<link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\" media=\"screen\">
+					</head>
+					<body>
+					<div id=\"header\">
+ 						<div id=\"logo\"></div>
+    					<div id=\"tagline\">A viewer-friendly site displaying the artworks from <a href=\"#\" target=\"_blank\">RedditGetsDrawn</a> </div>
+  					</div> <!-- header -->"
+
 	posts_formatted.each{|posts| 
 		posts.artworks.select{|art|
 			!art.link == nil
@@ -304,23 +312,51 @@ def make_HTML_test(posts_formatted)
 
 	posts_formatted.each_with_index do |post, i|
 		unless post.ref_link == nil || post.artworks.empty?
-			html_file += "<div class=\"post\">"
-			html_file += "<p>#{post.title}</p>"
-			html_file += "<img src=\"#{post.ref_link}\" \/>"
-			post.artworks.each_with_index do |artwork, index|
-				html_file += "<div class=\"artworks\">"
-				unless artwork.link == nil
-					html_file += "<div class=\"art\">"
-					html_file += "<img src=\"#{artwork.link}\"\/>"
-					html_file += "<\/div>"
-				end
-				html_file += "<\/div>"
-			end
-			html_file += "<\/div>"
+			html_file += "<div class=\"posts\">"
+    		html_file += "<h2 class=\"title\"><a href=\"#{post.comments_link}\">#{post.title}</a></h2>"
+    		html_file += "<div class=\"ref\">"
+    		html_file += "<img src=\"#{post.ref_link}\"><br>"
+    		html_file += "<div class=\"subUsername\">Submitted by <a href=\"#{post.submitter.user_link}\">#{post.submitter.username}</a></div>"
+    		html_file += "</div> <!-- ref -->"
+			html_file += "<div class=\"art\">"
+    		html_file += "<div class=\"scroller\" style=\"height: 600px; margin: 0 auto;\">"
+    		html_file += "<div class=\"innerScrollArea\">"
+    		html_file += "<ul>"
+    		post.artworks.each_with_index do |artwork, index|
+    			unless artwork.link == nil
+    			    html_file += "<li><img src=\"#{artwork.link}\" height=\"500px\" width=auto/><br><a href=\"#{artwork.submitter.user_link}\" class=\"subUsername\">#{artwork.submitter.username}</a></li>"
+    			end
+    		end
+    		html_file += "</ul>"
+    		html_file += "</div></div></div></div>"
 		end
 	end
-	html_file += "<\/body>"
-	html_file += "<\/html>"
+	html_file += "<div id=\"footer\">
+ 				    <img id=\"upArrow\" src=\"\">
+ 				    <img id=\"downArrow\" src=\"\">
+ 				  </div>
+				  <script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js\"></script>
+				  <script type=\"text/javascript\">
+				      $(window).load(function (){
+				          var scroller = $('.scroller div.innerScrollArea');
+				          console.log(scroller);
+				          scroller.each(function(){
+				            var $this = $(this);
+				            var scrollerContent = $this.children('ul');
+				            var curX = 0;
+				            scrollerContent.children().each(function(){
+				              $this = $(this);
+				              $this.css('left', curX);
+				              curX += $this.outerWidth(true);
+				            });
+				          var fullW = curX;
+				          var viewportW = scroller.width(); 
+				          })
+				          
+  
+				          scroller.css('overflow-x', 'auto');
+				      });
+				  </script></body></html>"
 	Dir.mkdir("RGD_HTML") unless File::directory?("RGD_HTML")
 	open("RGD_HTML/RGD_Gallery.html", 'wb') do |file|
 		file.write(html_file)

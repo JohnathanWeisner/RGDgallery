@@ -10,7 +10,7 @@ html {
 }
 
 #header {
-	position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   float: left;
@@ -35,7 +35,7 @@ html {
 
 }
 
-#posts {
+.posts {
   /*width: 100%;*/
   margin-top: 100px;
   margin-left: 75px;
@@ -49,14 +49,14 @@ html {
   text-decoration: none;
 }
 
-#ref {
+.ref {
   height: 500px;
 
-	float: left;
+  float: left;
 }
 
-#ref img { 
-	height: 100%;
+.ref img { 
+  height: 100%;
 }
 
 
@@ -64,22 +64,22 @@ html {
   float: right;
 }
 
-#ref .subUsername a {  }
+.ref .subUsername a {  }
 
-#ref .subUsername {  }
+.ref .subUsername {  }
 
-#ref .subUserLink {  }
+.ref .subUserLink {  }
 
-#art {
+.art {
   position: relative;
   margin-left: 475px;
 }
 
-#scroller {
+.scroller {
     position: relative;
     overflow: hidden;
 }
-#scroller .innerScrollArea {
+.scroller .innerScrollArea {
     overflow: hidden;
     position: absolute;
     left: 0;
@@ -87,12 +87,12 @@ html {
     top: 0;
     bottom: 0;
 }
-#scroller ul {
+.scroller ul {
     padding: 0;
     margin: 0;
     position: relative;
 }
-#scroller li {
+.scroller li {
     padding: 0 30px;
     margin: 0;
     list-style-type: none;
@@ -107,16 +107,16 @@ html {
 
 .art .subUserLink {  }
 
-#scrollArrow {
+.scrollArrow {
   /*scroll right on hover*/
 }
 
-#scrollArrow:hover {
+.scrollArrow:hover {
   /*scroll right on hover*/
 }
 
 #footer {
-	position: fixed;
+  position: fixed;
   bottom: 0;
   left: 0;
   float: left;
@@ -131,7 +131,7 @@ html {
 }
 
 #upArrow, #downArrow {
-	margin:auto;
+  margin:auto;
 }
 
 /*
