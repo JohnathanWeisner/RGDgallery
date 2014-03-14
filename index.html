@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>gotdrawn</title>
+  <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+</head>
+<body>
+
+  <div id="header">
+  	<div id="logo"></div>
+    <div id="tagline">A viewer-friendly site displaying the artworks from <a href="#" target="_blank">RedditGetsDrawn</a> </div>
+  </div> <!-- header -->
+
+  <div id="posts">
+    <h2 class="title"><a href="http://www.reddit.com/r/redditgetsdrawn/comments/20bgom/as_a_drawer_ive_drawn_many_people_but_for_once_id/">As a drawer I've drawn many people but for once I'd like to be the one being drawn ! This is me with my pink hair.</a></h2>
+    
+    <div id="ref">
+    	<img src="http://i.imgur.com/AwCGZ8T.jpg">
+    	<div id="subUsername">Submitted by <a href="http://www.reddit.com/user/STEP___">STEP___</a></div>
+    </div> <!-- ref -->
+
+    <div id="art">
+      <div id="scroller" style="height: 600px; margin: 0 auto;">
+        <div class="innerScrollArea">
+            <ul>
+                <!-- Define photos here -->
+                <li><img src="http://i.imgur.com/RWEeF8V.jpg" height="500px" width="500px"/><br><a href="" class="subUsername">username</a></li>
+                <li><img src="http://i.imgur.com/J89ZACm.jpg" height="500px" width="500px"/><br><a href="" class="subUsername">username</a></li>
+                <li><img src="http://i.imgur.com/ETz5lPk.jpg" height="500px" width="500px"/><br><a href="" class="subUsername">username</a></li>
+                <li><img src="http://i.imgur.com/nGskFLQ.jpg" height="500px" width="500px"/><br><a href="" class="subUsername">username</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- posts -->
+
+  <div id="footer">
+  	<img id="upArrow" src="">
+    <img id="downArrow" src="">
+  </div> <!-- footer -->
+
+  
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var scroller = $('#scroller div.innerScrollArea');
+        var scrollerContent = scroller.children('ul');
+        scrollerContent.children().clone().appendTo(scrollerContent);
+        var curX = 0;
+        scrollerContent.children().each(function(){
+            var $this = $(this);
+            $this.css('left', curX);
+            curX += $this.outerWidth(true);
+        });
+        var fullW = curX / 2;
+        var viewportW = scroller.width();
+
+        scroller.css('overflow-x', 'auto');
+    });
+</script>
+</body>
+</html>
