@@ -302,8 +302,8 @@ def make_HTML_test(posts_formatted)
 					<body>
 					<div id=\"header\">
  						<img id=\"logo\" src=\"web_files/RGDlogo.png\">
- 						<img id=\"redditLogo\" src=\"http://adiumxtras.com/images/thumbs/reddit_alien_1_3582_2149_thumb.png\">
-    					<div id=\"tagline\">A viewer-friendly site displaying the artworks from <a href=\"#\" target=\"_blank\">RedditGetsDrawn</a> </div>
+    					<div id=\"tagline\"><span>A viewer-friendly site displaying the artworks from <a href=\"#\" target=\"_blank\">RedditGetsDrawn</a> </span>
+              <img id=\"redditLogo\" src=\"http://adiumxtras.com/images/thumbs/reddit_alien_1_3582_2149_thumb.png\"></div>
   					</div> <!-- header -->"
 
 	posts_formatted.each{|posts| 

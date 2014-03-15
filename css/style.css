@@ -12,19 +12,17 @@ body, html {
   height: 56px;
   background-color: rgb(251,101,33);
   z-index: 10;
-  -moz-box-shadow:    3px 3px 2px 2px rgb(251,189,150);
-  -webkit-box-shadow: 3px 3px 2px 2px rgb(251,189,150);
-  box-shadow:         3px 3px 2px 2px rgb(251,189,150);
+  border-bottom: 3px solid rgb(251,189,150);
 }
 
 #logo {
   height: 28px;
-  padding: 11px 35px;
+  padding: 11px 40px;
 }
 
 #tagline {
   float: right;
-  margin: 20px 0px;
+  margin: 2px 0px;
   color: rgb(253,220,197);
   /*font-size: 1.000em;*/
   font-family: 'Droid Sans', sans-serif;
@@ -39,18 +37,17 @@ body, html {
 }
 
 #redditLogo {
-  float: right;
   height: 36px;
   margin: 5px 40px 0 0;
 }
 
 .posts {
-  margin-top: 100px;
+  margin-top: 112px;
   margin-left: 40px;
 }
 
 .title { 
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 
 .title a {
