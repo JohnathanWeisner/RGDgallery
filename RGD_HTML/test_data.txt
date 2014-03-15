@@ -1,0 +1,858 @@
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #1:
+Title
+posts_formatted[1].title : My nephew having the best day pretending to drive my dad's scooter!
+
+Reference picture
+posts_formatted[1].ref_link : http://i.imgur.com/hnavhuR.jpg
+
+Submitter
+posts_formatted[1].submitter.username : Dorisisginger
+posts_formatted[1].submitter.user_link : http://www.reddit.com/user/Dorisisginger
+
+Time Submitted
+posts_formatted[1].timestamp : 2014-03-12T12:26:43+00:00
+
+Link to the comments section of the post
+posts_formatted[1].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/2082td/my_nephew_having_the_best_day_pretending_to_drive/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+--------------------------------------------------------------
+
+Artwork at index #0
+Artwork Link
+posts_formatted[1].artworks[0].link : http://i.imgur.com/oeiWn9s.jpg?1
+
+Artwork Submitter
+posts_formatted[1].artworks[0].submitter.username : huggsatron
+posts_formatted[1].artworks[0].submitter.user_link : http://www.reddit.com/user/huggsatron
+
+Artwork Originially Posted
+posts_formatted[1].artworks[0].timestamp : 2014-03-12T16:44:28+00:00
+
+Artwork Upvotes Count
+posts_formatted[1].artworks[0].upvotes : 12
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #1
+Artwork Link
+posts_formatted[1].artworks[1].link : http://i.imgur.com/mug7jLI.jpg
+
+Artwork Submitter
+posts_formatted[1].artworks[1].submitter.username : _Tys1_
+posts_formatted[1].artworks[1].submitter.user_link : http://www.reddit.com/user/_Tys1_
+
+Artwork Originially Posted
+posts_formatted[1].artworks[1].timestamp : 2014-03-12T13:57:33+00:00
+
+Artwork Upvotes Count
+posts_formatted[1].artworks[1].upvotes : 18
+--------------------------------------------------------------
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #2:
+Title
+posts_formatted[2].title : My classy best friend Rowdy. If someone could take this pose and put him in a bar with a pint and maybe a cigarette or something that'd be amazing.
+
+Reference picture
+posts_formatted[2].ref_link : http://i.imgur.com/U91r5U5.jpg?1
+
+Submitter
+posts_formatted[2].submitter.username : MrRyanB
+posts_formatted[2].submitter.user_link : http://www.reddit.com/user/MrRyanB
+
+Time Submitted
+posts_formatted[2].timestamp : 2014-03-12T15:13:13+00:00
+
+Link to the comments section of the post
+posts_formatted[2].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/208fb3/my_classy_best_friend_rowdy_if_someone_could_take/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+--------------------------------------------------------------
+
+Artwork at index #0
+Artwork Link
+posts_formatted[2].artworks[0].link : http://i.imgur.com/4MY4Bwj.jpg
+
+Artwork Submitter
+posts_formatted[2].artworks[0].submitter.username : Double_Whiskey_Sour
+posts_formatted[2].artworks[0].submitter.user_link : http://www.reddit.com/user/Double_Whiskey_Sour
+
+Artwork Originially Posted
+posts_formatted[2].artworks[0].timestamp : 2014-03-12T19:56:01+00:00
+
+Artwork Upvotes Count
+posts_formatted[2].artworks[0].upvotes : 26
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #1
+Artwork Link
+posts_formatted[2].artworks[1].link : http://i.imgur.com/DehB5Sx.jpg
+
+Artwork Submitter
+posts_formatted[2].artworks[1].submitter.username : Martian-Lynch
+posts_formatted[2].artworks[1].submitter.user_link : http://www.reddit.com/user/Martian-Lynch
+
+Artwork Originially Posted
+posts_formatted[2].artworks[1].timestamp : 2014-03-12T16:54:59+00:00
+
+Artwork Upvotes Count
+posts_formatted[2].artworks[1].upvotes : 13
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #2
+Artwork Link
+posts_formatted[2].artworks[2].link : http://i.imgur.com/Iq6S75Y.png
+
+Artwork Submitter
+posts_formatted[2].artworks[2].submitter.username : BaconPancakes1
+posts_formatted[2].artworks[2].submitter.user_link : http://www.reddit.com/user/BaconPancakes1
+
+Artwork Originially Posted
+posts_formatted[2].artworks[2].timestamp : 2014-03-12T19:45:34+00:00
+
+Artwork Upvotes Count
+posts_formatted[2].artworks[2].upvotes : 12
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #3
+Artwork Link
+posts_formatted[2].artworks[3].link : http://i.imgur.com/YMGssia.jpg
+
+Artwork Submitter
+posts_formatted[2].artworks[3].submitter.username : connoisseurusveg
+posts_formatted[2].artworks[3].submitter.user_link : http://www.reddit.com/user/connoisseurusveg
+
+Artwork Originially Posted
+posts_formatted[2].artworks[3].timestamp : 2014-03-12T19:00:17+00:00
+
+Artwork Upvotes Count
+posts_formatted[2].artworks[3].upvotes : 9
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #4
+Artwork Link
+posts_formatted[2].artworks[4].link : http://i.imgur.com/kL1p2Ik.jpg
+
+Artwork Submitter
+posts_formatted[2].artworks[4].submitter.username : viramola
+posts_formatted[2].artworks[4].submitter.user_link : http://www.reddit.com/user/viramola
+
+Artwork Originially Posted
+posts_formatted[2].artworks[4].timestamp : 2014-03-12T20:15:52+00:00
+
+Artwork Upvotes Count
+posts_formatted[2].artworks[4].upvotes : 5
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #5
+Artwork Link
+posts_formatted[2].artworks[5].link : http://i.imgur.com/ENccUnt.jpg?1
+
+Artwork Submitter
+posts_formatted[2].artworks[5].submitter.username : MrRyanB
+posts_formatted[2].artworks[5].submitter.user_link : http://www.reddit.com/user/MrRyanB
+
+Artwork Originially Posted
+posts_formatted[2].artworks[5].timestamp : 2014-03-12T20:52:50+00:00
+
+Artwork Upvotes Count
+posts_formatted[2].artworks[5].upvotes : 4
+--------------------------------------------------------------
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #3:
+Title
+posts_formatted[3].title : It's my sisters birthday soon and I'd love to surprise her with a drawing, can you help? Here are a few photos- she's the strongest most beautiful person I know!
+
+Reference picture
+posts_formatted[3].ref_link : http://i.imgur.com/8PkNaVH.jpg
+
+Submitter
+posts_formatted[3].submitter.username : sistersando
+posts_formatted[3].submitter.user_link : http://www.reddit.com/user/sistersando
+
+Time Submitted
+posts_formatted[3].timestamp : 2014-03-12T07:38:46+00:00
+
+Link to the comments section of the post
+posts_formatted[3].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/207oxv/its_my_sisters_birthday_soon_and_id_love_to/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+--------------------------------------------------------------
+
+Artwork at index #0
+Artwork Link
+posts_formatted[3].artworks[0].link : http://i.imgur.com/rmeozNv.jpg
+
+Artwork Submitter
+posts_formatted[3].artworks[0].submitter.username : mistermannequin
+posts_formatted[3].artworks[0].submitter.user_link : http://www.reddit.com/user/mistermannequin
+
+Artwork Originially Posted
+posts_formatted[3].artworks[0].timestamp : 2014-03-12T10:50:04+00:00
+
+Artwork Upvotes Count
+posts_formatted[3].artworks[0].upvotes : 27
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #1
+Artwork Link
+posts_formatted[3].artworks[1].link : http://i.imgur.com/FB46tvT.jpg
+
+Artwork Submitter
+posts_formatted[3].artworks[1].submitter.username : bennybloom
+posts_formatted[3].artworks[1].submitter.user_link : http://www.reddit.com/user/bennybloom
+
+Artwork Originially Posted
+posts_formatted[3].artworks[1].timestamp : 2014-03-12T16:40:54+00:00
+
+Artwork Upvotes Count
+posts_formatted[3].artworks[1].upvotes : 25
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #2
+Artwork Link
+posts_formatted[3].artworks[2].link : http://i.imgur.com/nYPMV8y.jpg
+
+Artwork Submitter
+posts_formatted[3].artworks[2].submitter.username : _At_least_I_tried_
+posts_formatted[3].artworks[2].submitter.user_link : http://www.reddit.com/user/_At_least_I_tried_
+
+Artwork Originially Posted
+posts_formatted[3].artworks[2].timestamp : 2014-03-12T15:51:24+00:00
+
+Artwork Upvotes Count
+posts_formatted[3].artworks[2].upvotes : 19
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #3
+Artwork Link
+posts_formatted[3].artworks[3].link : http://i.imgur.com/sYLksnx.jpg
+
+Artwork Submitter
+posts_formatted[3].artworks[3].submitter.username : TwinkleCream
+posts_formatted[3].artworks[3].submitter.user_link : http://www.reddit.com/user/TwinkleCream
+
+Artwork Originially Posted
+posts_formatted[3].artworks[3].timestamp : 2014-03-12T16:43:24+00:00
+
+Artwork Upvotes Count
+posts_formatted[3].artworks[3].upvotes : 15
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #4
+Artwork Link
+posts_formatted[3].artworks[4].link : http://i.imgur.com/5mcLYmk.jpg?1
+
+Artwork Submitter
+posts_formatted[3].artworks[4].submitter.username : fareastchoco_ss
+posts_formatted[3].artworks[4].submitter.user_link : http://www.reddit.com/user/fareastchoco_ss
+
+Artwork Originially Posted
+posts_formatted[3].artworks[4].timestamp : 2014-03-12T10:40:46+00:00
+
+Artwork Upvotes Count
+posts_formatted[3].artworks[4].upvotes : 15
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #5
+Artwork Link
+posts_formatted[3].artworks[5].link : http://i.imgur.com/sbURheB.png
+
+Artwork Submitter
+posts_formatted[3].artworks[5].submitter.username : BaconPancakes1
+posts_formatted[3].artworks[5].submitter.user_link : http://www.reddit.com/user/BaconPancakes1
+
+Artwork Originially Posted
+posts_formatted[3].artworks[5].timestamp : 2014-03-12T18:17:06+00:00
+
+Artwork Upvotes Count
+posts_formatted[3].artworks[5].upvotes : 6
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #6
+Artwork Link
+posts_formatted[3].artworks[6].link : http://i.imgur.com/RKszkWH.jpg
+
+Artwork Submitter
+posts_formatted[3].artworks[6].submitter.username : Katlix
+posts_formatted[3].artworks[6].submitter.user_link : http://www.reddit.com/user/Katlix
+
+Artwork Originially Posted
+posts_formatted[3].artworks[6].timestamp : 2014-03-12T18:10:00+00:00
+
+Artwork Upvotes Count
+posts_formatted[3].artworks[6].upvotes : 4
+--------------------------------------------------------------
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #4:
+Title
+posts_formatted[4].title : My kids know how to strike a pose. Will you draw them Reddit?
+
+Reference picture
+posts_formatted[4].ref_link : http://i.imgur.com/lgWwaye.jpg
+
+Submitter
+posts_formatted[4].submitter.username : Teanasitee
+posts_formatted[4].submitter.user_link : http://www.reddit.com/user/Teanasitee
+
+Time Submitted
+posts_formatted[4].timestamp : 2014-03-12T05:16:52+00:00
+
+Link to the comments section of the post
+posts_formatted[4].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/207gi7/my_kids_know_how_to_strike_a_pose_will_you_draw/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+--------------------------------------------------------------
+
+Artwork at index #0
+Artwork Link
+posts_formatted[4].artworks[0].link : http://i.imgur.com/LGOdcKg.jpg
+
+Artwork Submitter
+posts_formatted[4].artworks[0].submitter.username : madwit
+posts_formatted[4].artworks[0].submitter.user_link : http://www.reddit.com/user/madwit
+
+Artwork Originially Posted
+posts_formatted[4].artworks[0].timestamp : 2014-03-12T05:28:35+00:00
+
+Artwork Upvotes Count
+posts_formatted[4].artworks[0].upvotes : 28
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #1
+Artwork Link
+posts_formatted[4].artworks[1].link : http://i.imgur.com/DHJ6VIf.jpg
+
+Artwork Submitter
+posts_formatted[4].artworks[1].submitter.username : _Tys1_
+posts_formatted[4].artworks[1].submitter.user_link : http://www.reddit.com/user/_Tys1_
+
+Artwork Originially Posted
+posts_formatted[4].artworks[1].timestamp : 2014-03-12T13:13:09+00:00
+
+Artwork Upvotes Count
+posts_formatted[4].artworks[1].upvotes : 8
+--------------------------------------------------------------
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #5:
+Title
+posts_formatted[5].title : My daughter, my princess. RGD, can you make her a real one?
+
+Reference picture
+posts_formatted[5].ref_link : https://i.imgur.com/H1KC9MW.jpg
+
+Submitter
+posts_formatted[5].submitter.username : lidsville76
+posts_formatted[5].submitter.user_link : http://www.reddit.com/user/lidsville76
+
+Time Submitted
+posts_formatted[5].timestamp : 2014-03-12T19:30:26+00:00
+
+Link to the comments section of the post
+posts_formatted[5].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/20962g/my_daughter_my_princess_rgd_can_you_make_her_a/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+--------------------------------------------------------------
+
+Artwork at index #0
+Artwork Link
+posts_formatted[5].artworks[0].link : http://i.imgur.com/yLgCPGp.jpg
+
+Artwork Submitter
+posts_formatted[5].artworks[0].submitter.username : oohcabbage
+posts_formatted[5].artworks[0].submitter.user_link : http://www.reddit.com/user/oohcabbage
+
+Artwork Originially Posted
+posts_formatted[5].artworks[0].timestamp : 2014-03-12T21:11:46+00:00
+
+Artwork Upvotes Count
+posts_formatted[5].artworks[0].upvotes : 8
+--------------------------------------------------------------
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #7:
+Title
+posts_formatted[7].title : My daughter, veternarian in training.
+
+Reference picture
+posts_formatted[7].ref_link : http://i.imgur.com/bLIH9Yy.jpg
+
+Submitter
+posts_formatted[7].submitter.username : strokerlinx
+posts_formatted[7].submitter.user_link : http://www.reddit.com/user/strokerlinx
+
+Time Submitted
+posts_formatted[7].timestamp : 2014-03-12T12:51:05+00:00
+
+Link to the comments section of the post
+posts_formatted[7].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/2084cm/my_daughter_veternarian_in_training/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+--------------------------------------------------------------
+
+Artwork at index #0
+Artwork Link
+posts_formatted[7].artworks[0].link : http://i.imgur.com/u66mYgs.jpg
+
+Artwork Submitter
+posts_formatted[7].artworks[0].submitter.username : gdilly
+posts_formatted[7].artworks[0].submitter.user_link : http://www.reddit.com/user/gdilly
+
+Artwork Originially Posted
+posts_formatted[7].artworks[0].timestamp : 2014-03-12T14:09:17+00:00
+
+Artwork Upvotes Count
+posts_formatted[7].artworks[0].upvotes : 5
+--------------------------------------------------------------
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #9:
+Title
+posts_formatted[9].title : My boyfriend and I met on Reddit because of Harry Potter. We live on opposite coasts, but we took a trip to WWoHP together. We would love any of your art of one of our favorite pictures together (which we don't get to take many of)!
+
+Reference picture
+posts_formatted[9].ref_link : http://i.imgur.com/QVob5Wn.jpg
+
+Submitter
+posts_formatted[9].submitter.username : Killerzeit
+posts_formatted[9].submitter.user_link : http://www.reddit.com/user/Killerzeit
+
+Time Submitted
+posts_formatted[9].timestamp : 2014-03-12T06:30:24+00:00
+
+Link to the comments section of the post
+posts_formatted[9].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/207l83/my_boyfriend_and_i_met_on_reddit_because_of_harry/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+--------------------------------------------------------------
+
+Artwork at index #0
+Artwork Link
+posts_formatted[9].artworks[0].link : http://i.imgur.com/hvDs2Ou.jpg
+
+Artwork Submitter
+posts_formatted[9].artworks[0].submitter.username : ELthumbz
+posts_formatted[9].artworks[0].submitter.user_link : http://www.reddit.com/user/ELthumbz
+
+Artwork Originially Posted
+posts_formatted[9].artworks[0].timestamp : 2014-03-12T16:34:25+00:00
+
+Artwork Upvotes Count
+posts_formatted[9].artworks[0].upvotes : 9
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #1
+Artwork Link
+posts_formatted[9].artworks[1].link : http://i.imgur.com/QNPphfn.jpg
+
+Artwork Submitter
+posts_formatted[9].artworks[1].submitter.username : madwit
+posts_formatted[9].artworks[1].submitter.user_link : http://www.reddit.com/user/madwit
+
+Artwork Originially Posted
+posts_formatted[9].artworks[1].timestamp : 2014-03-12T07:17:20+00:00
+
+Artwork Upvotes Count
+posts_formatted[9].artworks[1].upvotes : 8
+--------------------------------------------------------------
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #11:
+Title
+posts_formatted[11].title : Saw the a great post about this subreddit, and wondered how good a drawing you could do of my daughter? I think she looks super cute, but I am biased!
+
+Reference picture
+posts_formatted[11].ref_link : http://i.imgur.com/fi3dNql.jpg?1
+
+Submitter
+posts_formatted[11].submitter.username : altrezia
+posts_formatted[11].submitter.user_link : http://www.reddit.com/user/altrezia
+
+Time Submitted
+posts_formatted[11].timestamp : 2014-03-12T17:54:13+00:00
+
+Link to the comments section of the post
+posts_formatted[11].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/208vt6/saw_the_a_great_post_about_this_subreddit_and/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+--------------------------------------------------------------
+
+Artwork at index #0
+Artwork Link
+posts_formatted[11].artworks[0].link : http://i.imgur.com/9SIZdQ3.jpg
+
+Artwork Submitter
+posts_formatted[11].artworks[0].submitter.username : annana
+posts_formatted[11].artworks[0].submitter.user_link : http://www.reddit.com/user/annana
+
+Artwork Originially Posted
+posts_formatted[11].artworks[0].timestamp : 2014-03-12T21:12:59+00:00
+
+Artwork Upvotes Count
+posts_formatted[11].artworks[0].upvotes : 2
+--------------------------------------------------------------
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #13:
+Title
+posts_formatted[13].title : Can someone please draw my mom? I wanna surprise her! I'd appreciate it so much.
+
+Reference picture
+posts_formatted[13].ref_link : http://i.imgur.com/JjfrTPE.jpg
+
+Submitter
+posts_formatted[13].submitter.username : JustARedditor94
+posts_formatted[13].submitter.user_link : http://www.reddit.com/user/JustARedditor94
+
+Time Submitted
+posts_formatted[13].timestamp : 2014-03-12T15:45:49+00:00
+
+Link to the comments section of the post
+posts_formatted[13].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/208ifs/can_someone_please_draw_my_mom_i_wanna_surprise/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+--------------------------------------------------------------
+
+Artwork at index #0
+Artwork Link
+posts_formatted[13].artworks[0].link : http://i.imgur.com/ByVb5AQ.jpg
+
+Artwork Submitter
+posts_formatted[13].artworks[0].submitter.username : cheesetor
+posts_formatted[13].artworks[0].submitter.user_link : http://www.reddit.com/user/cheesetor
+
+Artwork Originially Posted
+posts_formatted[13].artworks[0].timestamp : 2014-03-12T18:10:37+00:00
+
+Artwork Upvotes Count
+posts_formatted[13].artworks[0].upvotes : 8
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #1
+Artwork Link
+posts_formatted[13].artworks[1].link : http://i.imgur.com/oDLEmuT.jpg
+
+Artwork Submitter
+posts_formatted[13].artworks[1].submitter.username : Postcard_Portraits
+posts_formatted[13].artworks[1].submitter.user_link : http://www.reddit.com/user/Postcard_Portraits
+
+Artwork Originially Posted
+posts_formatted[13].artworks[1].timestamp : 2014-03-12T20:34:29+00:00
+
+Artwork Upvotes Count
+posts_formatted[13].artworks[1].upvotes : 2
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #2
+Artwork Link
+posts_formatted[13].artworks[2].link : http://i.imgur.com/ixFrOfA.jpg
+
+Artwork Submitter
+posts_formatted[13].artworks[2].submitter.username : Powersimon
+posts_formatted[13].artworks[2].submitter.user_link : http://www.reddit.com/user/Powersimon
+
+Artwork Originially Posted
+posts_formatted[13].artworks[2].timestamp : 2014-03-12T20:58:10+00:00
+
+Artwork Upvotes Count
+posts_formatted[13].artworks[2].upvotes : 2
+--------------------------------------------------------------
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #16:
+Title
+posts_formatted[16].title : My dad's birthday is in a few days. Can I get a picture of him and his GF scuba diving drawn? Thanks RGD
+
+Reference picture
+posts_formatted[16].ref_link : http://i.imgur.com/G4tW8uN.jpg
+
+Submitter
+posts_formatted[16].submitter.username : paradox870
+posts_formatted[16].submitter.user_link : http://www.reddit.com/user/paradox870
+
+Time Submitted
+posts_formatted[16].timestamp : 2014-03-12T19:48:04+00:00
+
+Link to the comments section of the post
+posts_formatted[16].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/2097yb/my_dads_birthday_is_in_a_few_days_can_i_get_a/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+--------------------------------------------------------------
+
+Artwork at index #1
+Artwork Link
+posts_formatted[16].artworks[1].link : http://www.reddit.com/r/redditgetsdrawn/comments/2096vl/this_is_one_of_my_favorite_pictures_with_my/
+
+Artwork Submitter
+posts_formatted[16].artworks[1].submitter.username : sgt_mary_mary
+posts_formatted[16].artworks[1].submitter.user_link : http://www.reddit.com/user/sgt_mary_mary
+
+Artwork Originially Posted
+posts_formatted[16].artworks[1].timestamp : 2014-03-12T20:16:56+00:00
+
+Artwork Upvotes Count
+posts_formatted[16].artworks[1].upvotes : 2
+--------------------------------------------------------------
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #17:
+Title
+posts_formatted[17].title : A Younger Me Meeting the Science Guy
+
+Reference picture
+posts_formatted[17].ref_link : http://i.imgur.com/74WxBRM.jpg?1
+
+Submitter
+posts_formatted[17].submitter.username : libertytoast
+posts_formatted[17].submitter.user_link : http://www.reddit.com/user/libertytoast
+
+Time Submitted
+posts_formatted[17].timestamp : 2014-03-11T20:55:29+00:00
+
+Link to the comments section of the post
+posts_formatted[17].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/2064su/a_younger_me_meeting_the_science_guy/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+--------------------------------------------------------------
+
+Artwork at index #0
+Artwork Link
+posts_formatted[17].artworks[0].link : http://i.imgur.com/BnwRHaK.jpg
+
+Artwork Submitter
+posts_formatted[17].artworks[0].submitter.username : f00ns
+posts_formatted[17].artworks[0].submitter.user_link : http://www.reddit.com/user/f00ns
+
+Artwork Originially Posted
+posts_formatted[17].artworks[0].timestamp : 2014-03-12T03:43:15+00:00
+
+Artwork Upvotes Count
+posts_formatted[17].artworks[0].upvotes : 39
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Artwork at index #1
+Artwork Link
+posts_formatted[17].artworks[1].link : http://i.imgur.com/Wyf2H9S.png
+
+Artwork Submitter
+posts_formatted[17].artworks[1].submitter.username : mspaintninja
+posts_formatted[17].artworks[1].submitter.user_link : http://www.reddit.com/user/mspaintninja
+
+Artwork Originially Posted
+posts_formatted[17].artworks[1].timestamp : 2014-03-12T02:56:27+00:00
+
+Artwork Upvotes Count
+posts_formatted[17].artworks[1].upvotes : 28
+--------------------------------------------------------------
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #19:
+Title
+posts_formatted[19].title : Someone tried to pick up my friend in a bar by drawing a picture of her. I'm pretty sure he mistook her for a Bratz doll. Anyone on here want to give it a less generic and hyper-sexualized spin?
+
+Reference picture
+posts_formatted[19].ref_link : http://i.imgur.com/djmhnbB.jpg
+
+Submitter
+posts_formatted[19].submitter.username : Public_Frenemy
+posts_formatted[19].submitter.user_link : http://www.reddit.com/user/Public_Frenemy
+
+Time Submitted
+posts_formatted[19].timestamp : 2014-03-12T19:31:49+00:00
+
+Link to the comments section of the post
+posts_formatted[19].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/20968l/someone_tried_to_pick_up_my_friend_in_a_bar_by/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+--------------------------------------------------------------
+
+Artwork at index #0
+Artwork Link
+posts_formatted[19].artworks[0].link : http://i.imgur.com/jn3j9tD.jpg
+
+Artwork Submitter
+posts_formatted[19].artworks[0].submitter.username : sgt_mary_mary
+posts_formatted[19].artworks[0].submitter.user_link : http://www.reddit.com/user/sgt_mary_mary
+
+Artwork Originially Posted
+posts_formatted[19].artworks[0].timestamp : 2014-03-12T20:01:50+00:00
+
+Artwork Upvotes Count
+posts_formatted[19].artworks[0].upvotes : 3
+--------------------------------------------------------------
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #22:
+Title
+posts_formatted[22].title : My mother and I, back when we used to live in a cattle ranch in the North of Mexico.
+
+Reference picture
+posts_formatted[22].ref_link : http://i.imgur.com/2oQirjw.png
+
+Submitter
+posts_formatted[22].submitter.username : Chuyster
+posts_formatted[22].submitter.user_link : http://www.reddit.com/user/Chuyster
+
+Time Submitted
+posts_formatted[22].timestamp : 2014-03-12T19:30:04+00:00
+
+Link to the comments section of the post
+posts_formatted[22].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/20960m/my_mother_and_i_back_when_we_used_to_live_in_a/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+**************************************************************
+*****************ORIGINAL REFERENCE POST *********************
+**************************************************************
+
+
+
+The post in posts_formatted array at index #25:
+Title
+posts_formatted[25].title : My pregnant wife and I.
+
+Reference picture
+posts_formatted[25].ref_link : http://i.imgur.com/5dmVe1d.jpg
+
+Submitter
+posts_formatted[25].submitter.username : elphatboy71
+posts_formatted[25].submitter.user_link : http://www.reddit.com/user/elphatboy71
+
+Time Submitted
+posts_formatted[25].timestamp : 2014-03-12T14:39:08+00:00
+
+Link to the comments section of the post
+posts_formatted[25].comments_link : http://www.reddit.com/r/redditgetsdrawn/comments/208cb6/my_pregnant_wife_and_i/
+**************************************************************
+**************************************************************
+
+
+Iterating through the artworks array of this post we get
+--------------------------------------------------------------
+
+Artwork at index #0
+Artwork Link
+posts_formatted[25].artworks[0].link : http://i.imgur.com/lIvVeqR.png
+
+Artwork Submitter
+posts_formatted[25].artworks[0].submitter.username : _Tys1_
+posts_formatted[25].artworks[0].submitter.user_link : http://www.reddit.com/user/_Tys1_
+
+Artwork Originially Posted
+posts_formatted[25].artworks[0].timestamp : 2014-03-12T15:11:42+00:00
+
+Artwork Upvotes Count
+posts_formatted[25].artworks[0].upvotes : 3
+--------------------------------------------------------------
