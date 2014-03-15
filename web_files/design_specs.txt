@@ -1,0 +1,107 @@
+#Header 
+
+Header (orange): 
+rgb(251,101,33)
+height: 56px
+width: 100%
+
+
+Header highlight(lighter orange):
+rgb(251,189,150)
+height: 3px
+width: 100%
+
+
+Description on header (light color text on header): 
+rgb(253,220,197)
+font-size: 1.000em
+font: Droid Sans Bold 700
+
+Description on header ('RedditGetsDrawn'): 
+rgb(88,26,12)
+font-size: 1.000 em
+font: Droid Sans Bold 700
+
+----------------------------------
+
+#Footer
+
+Footer (blue): 
+rgba(0,173,239,0.5)
+height: 56px
+width: 100%
+
+Footer links:
+white (add a hover effect? Bolded text, another color, italic, or??)
+font-size: 1.000 em
+font: PT Sans
+
+----------------------------------
+
+#Title (text above images)
+
+Title text (gray):
+rgb(140,138,138)
+font-size: 1.000 em
+font: PT Sans
+
+----------------------------------
+
+#User (text below images)
+
+'Submitted by': 
+rgb(177,177,178)
+font-size: .75 em
+font: PT Sans
+
+Username (blue): 
+rgb(0,173,239)
+font-size: .75 em
+font: PT Sans
+
+----------------------------------
+
+
+#Border around images
+
+16px solid white border around images
+box-shadow: 0px 0px 18px #999999;
+
+-----------------------------------
+
+#Button
+
+size: 72px x 72px
+
+-----------------------------------
+
+Reddit logo:
+height: 36px
+
+-----------------------------------
+
+GetDrawn.com logo
+height: 28px
+
+-----------------------------------
+
+
+
+#Font Usage:
+
+
+#Description (in header):
+
+Droid Sans Bold 700
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:700' rel='stylesheet' type='text/css'>
+
+(css) font-family: 'Droid Sans', sans-serif;
+
+
+
+#Title, username (and 'submitted by'), footer links
+
+PT Sans Normal 400
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption' rel='stylesheet' type='text/css'>
+
+(css) font-family: 'PT Sans Caption', sans-serif;
