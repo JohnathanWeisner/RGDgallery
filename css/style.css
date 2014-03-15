@@ -49,7 +49,9 @@ body, html {
   margin-left: 40px;
 }
 
-.title {  }
+.title { 
+  margin-bottom: 16px;
+}
 
 .title a {
   color: rgb(140,138,138);
@@ -110,17 +112,23 @@ body, html {
     }
 
 
-.subUsername {
+.ref .subUsername {
   color: rgb(177,177,178);
+}
+
+.ref .subUsername a {
+  color: rgb(0,173,239);
   text-decoration: none;
 }
 
 .art .subUsername {
   float: right;
+  color: rgb(0,173,239);
+  text-decoration: none;
 }
 
 .art .subUsername a {
-  color: rgb(0,173,239);
+  
   font-size: .75em;
 }
 
