@@ -54,7 +54,11 @@ class Post
 					link_gallery = Nokogiri::HTML(open(link))
 					img_link = link_gallery.css('link').select{|this_link| this_link["rel"]=="image_src" }[0]["href"]
 				else
-					link
+					if link =~ /\.(png|jpg|gif|jpeg)/
+						link
+					else
+						nil
+					end
 				end
 			end
 		}[0]
@@ -218,7 +222,11 @@ class Artwork
 				    return links = []
 				end
 			else
-				links
+				if link =~ /\.(png|jpg|gif|jpeg)/
+					link
+				else
+					nil
+				end
 			end
 		end
 	end
