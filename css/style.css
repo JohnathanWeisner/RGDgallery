@@ -1,12 +1,6 @@
-html {
-  overflow-x: hidden;
-/*  height: 100%;
-  width: 100%;*/
-/*  background-color: rgba(, , , opacity);
-  font-family: ;
-  font-weight: ;
-  font-size: 1em;
-  line-height: 1em;*/
+body, html {
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
 }
 
 #header {
@@ -15,97 +9,128 @@ html {
   left: 0;
   float: left;
   width: 100%;
-  height: 60px;
-  background-color: rgba(255,77,0,0.9);
+  height: 56px;
+  background-color: rgb(251,101,33);
   z-index: 10;
-    /*shadow*/
+  -moz-box-shadow:    3px 3px 2px 2px rgb(251,189,150);
+  -webkit-box-shadow: 3px 3px 2px 2px rgb(251,189,150);
+  box-shadow:         3px 3px 2px 2px rgb(251,189,150);
 }
 
 #logo {
-
+  height: 28px;
+  padding: 11px 35px;
 }
 
 #tagline {
   float: right;
-  margin-right: 75px;
+  margin: 20px 0px;
+  color: rgb(253,220,197);
+  /*font-size: 1.000em;*/
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 700;
 }
 
 #tagline a {
   text-decoration: none;
+  color: rgb(88,26,12);
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 700;
+}
 
+#redditLogo {
+  float: right;
+  height: 36px;
+  margin: 5px 40px 0 0;
 }
 
 .posts {
-  /*width: 100%;*/
   margin-top: 100px;
-  margin-left: 75px;
+  margin-left: 40px;
+}
+
+.title { 
+  margin-bottom: 16px;
 }
 
 .title a {
-  color: #333;
-  font-size: .7em;
-  line-height: 2.9em;
+  color: rgb(140,138,138);
+  font-size: 0.800em;
   clear:both;
   text-decoration: none;
 }
 
 .ref {
   height: 500px;
-
+  margin-right: 70px;
   float: left;
 }
 
-.ref img { 
-  height: 100%;
+.ref img, .scroller img {
+  max-height: 100%;
+  padding: 16px;
+  margin: 20px 0;  
+  -moz-box-shadow:    0 0 18px #999;
+  -webkit-box-shadow: 0 0 18px #999;
+  box-shadow:         0 0 18px #999;
 }
 
-
-.subUsername { 
-  float: right;
+.ref img {
+  max-width: 500px;
 }
 
-.ref .subUsername a {  }
-
-.ref .subUsername {  }
-
-.ref .subUserLink {  }
+.scroller img {  }
 
 .art {
   position: relative;
   margin-left: 475px;
 }
 
-.scroller {
-    position: relative;
-    overflow: hidden;
-}
-.scroller .innerScrollArea {
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-.scroller ul {
-    padding: 0;
-    margin: 0;
-    position: relative;
-}
-.scroller li {
-    padding: 0 30px;
-    margin: 0;
-    list-style-type: none;
-    position: absolute;
-}
+    .scroller {
+      position: relative;
+      overflow: hidden;
+    }
+    .scroller .innerScrollArea {
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    .scroller ul {
+      padding: 0;
+      margin: 0;
+      position: relative;
+    }
+    .scroller li {
+      padding: 0 16px;
+      height: 500px;
+      margin: 0;
+      list-style-type: none;
+      position: absolute;
+    }
 
 
+.ref .subUsername {
+  color: rgb(177,177,178);
+}
+
+.ref .subUsername a {
+  color: rgb(0,173,239);
+  text-decoration: none;
+}
 
 .art .subUsername {
-  /*overlay username as a link with the user_link on the bottom left*/ 
+  float: right;
+  color: rgb(0,173,239);
+  text-decoration: none;
 }
 
-.art .subUserLink {  }
+.art .subUsername a {
+  
+  font-size: .75em;
+}
 
 .scrollArrow {
   /*scroll right on hover*/
@@ -121,12 +146,33 @@ html {
   left: 0;
   float: left;
   width: 100%;
-  height: 60px;
-  background-color: rgba(0,174,239,0.3);
+  height: 56px;
+  background-color: rgb(0,174,239);
+  opacity: 0.5;
   z-index: 10;
+  transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s; /* Safari */
 }
 
 #footer:hover {
+  opacity: 0.75;
+  transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s; /* Safari */
+}
+
+#footer p {
+  text-align: right;
+  margin: 20px 40px;
+}
+
+#footer a {
+  color: #fff;
+  font-size: 1.000em;
+  text-decoration: none;
+  padding-left: 16px;
+}
+
+#footer a:hover {
 
 }
 

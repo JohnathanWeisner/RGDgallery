@@ -305,10 +305,12 @@ def make_HTML_test(posts_formatted)
 						<title>gotdrawn</title>
 						<link rel=\"stylesheet\" href=\"css/normalize.css\" type=\"text/css\" media=\"screen\">
 						<link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\" media=\"screen\">
+						<link href=\"http://fonts.googleapis.com/css?family=Droid+Sans:700|PT+Sans\" rel=\"stylesheet\" type=\"text/css\">
 					</head>
 					<body>
 					<div id=\"header\">
- 						<div id=\"logo\"></div>
+ 						<img id=\"logo\" src=\"web_files/RGDlogo.png\">
+ 						<img id=\"redditLogo\" src=\"http://adiumxtras.com/images/thumbs/reddit_alien_1_3582_2149_thumb.png\">
     					<div id=\"tagline\">A viewer-friendly site displaying the artworks from <a href=\"#\" target=\"_blank\">RedditGetsDrawn</a> </div>
   					</div> <!-- header -->"
 
@@ -340,6 +342,10 @@ def make_HTML_test(posts_formatted)
 		end
 	end
 	html_file += "<div id=\"footer\">
+					<p>
+						<a class=\"footerLink\" href=\"\#\">view settings</a>
+						<a class=\"footerLink\" href=\"\#\">about</a>
+					</p>
  				    <img id=\"upArrow\" src=\"\">
  				    <img id=\"downArrow\" src=\"\">
  				  </div>
