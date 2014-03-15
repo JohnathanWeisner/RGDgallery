@@ -49,9 +49,8 @@ body, html {
   margin-left: 40px;
 }
 
-.title {
-  /*max-width: 60%;*/
-}
+.title {  }
+
 .title a {
   color: rgb(140,138,138);
   font-size: 0.800em;

@@ -301,7 +301,7 @@ def make_HTML_test(posts_formatted)
 					</head>
 					<body>
 					<div id=\"header\">
- 						<img id=\"logo\" src=\"https://github.com/JohnathanWeisner/RGDgallery/blob/master/web_files/RGDlogo.png?raw=true\">
+ 						<img id=\"logo\" src=\"web_files/RGDlogo.png\">
  						<img id=\"redditLogo\" src=\"http://adiumxtras.com/images/thumbs/reddit_alien_1_3582_2149_thumb.png\">
     					<div id=\"tagline\">A viewer-friendly site displaying the artworks from <a href=\"#\" target=\"_blank\">RedditGetsDrawn</a> </div>
   					</div> <!-- header -->"
