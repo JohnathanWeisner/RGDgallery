@@ -315,8 +315,8 @@ def make_HTML_test(posts_formatted)
   					</div> <!-- header -->"
 
 	posts_formatted.each{|posts| 
-		posts.artworks.select{|art|
-			!art.link == nil
+		posts.artworks.select!{|art|
+			(!(art.link == nil) || (art.link == []))
 		}
 	}
 
@@ -326,7 +326,7 @@ def make_HTML_test(posts_formatted)
     		html_file += "<h2 class=\"title\"><a href=\"#{post.comments_link}\">#{post.title}</a></h2>"
     		html_file += "<div class=\"ref\">"
     		html_file += "<img src=\"#{post.ref_link}\"><br>"
-    		html_file += "<div class=\"subUsername\">Submitted by <a href=\"#{post.submitter.user_link}\">#{post.submitter.username}</a></div>"
+    		html_file += "<div class=\"subUsername\">Submitted by <a href=\"#{post.comments_link}\">#{post.submitter.username}</a></div>"
     		html_file += "</div> <!-- ref -->"
 			html_file += "<div class=\"art\">"
     		html_file += "<div class=\"scroller\" style=\"height: 600px; margin: 0 auto;\">"
