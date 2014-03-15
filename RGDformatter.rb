@@ -314,9 +314,9 @@ def make_HTML_test(posts_formatted)
               <img id=\"redditLogo\" src=\"http://adiumxtras.com/images/thumbs/reddit_alien_1_3582_2149_thumb.png\"></div>
   					</div> <!-- header -->"
 
-	posts_formatted.each{|posts| 
-		posts.artworks.select!{|art|
-			(!(art.link == nil) || (art.link == []))
+	posts_formatted.each{|post| 
+		post.artworks.select!{|art|
+			!((art.link == nil) || (art.link == [])|| (art.submitter.username == post.submitter.username))
 		}
 	}
 
