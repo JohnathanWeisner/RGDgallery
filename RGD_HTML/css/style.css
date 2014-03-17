@@ -111,10 +111,15 @@ body, html {
       position: absolute;
     }
 
+.innerScrollArea ul {
+  -webkit-transition: all 15000s;
+  transition: all 15000s;
+}
+
 .innerScrollArea ul:hover {
   margin-left: -9999px;
-  -webkit-transition: all 200s;
-  transition: all 200s;
+  -webkit-transition: all 100s;
+  transition: all 100s;
 }
 
 .ref .subUsername {
