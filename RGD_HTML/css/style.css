@@ -111,6 +111,11 @@ body, html {
       position: absolute;
     }
 
+.innerScrollArea ul:hover {
+  margin-left: -9999px;
+  -webkit-transition: all 200s;
+  transition: all 200s;
+}
 
 .ref .subUsername {
   color: rgb(177,177,178);
