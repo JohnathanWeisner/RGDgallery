@@ -1,0 +1,14 @@
+- message icon next to comment link/title, indicati
+- change artists' names to watermark as previously discussed
+- use the blue footer for sponsorship instead of ads
+- make images links to comments/profiles, not only the text below it
+
+
+functionalities
+
+lazy load
+hover scroller
+resizing art so height always matches ref height (probably requires js)
+replace broken img links with default image
+fancy box image viewer?
+blue footer bar expands on link click, info displays in blue div
